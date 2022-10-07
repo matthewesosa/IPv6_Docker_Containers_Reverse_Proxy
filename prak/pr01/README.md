@@ -21,9 +21,9 @@
 
 ## Explanation:
 
--'dhcp6:false' - For the network interface ens18, IPv6 is assigned manually hence dhcp6 is set to false
+-'dhcp6:false' - For the network interface ens18, IPv6 is assigned manually hence dhcp6 is set to false.
 
--'dhcp4:true'- For the network interface ens19, I want IPv4 to be dynamically assigned; hence dhcp4 is set to true
+-'dhcp4:true'- For the network interface ens19, I want IPv4 to be dynamically assigned; hence dhcp4 is set to true.
 
 -'renderer:networkd' - The network configuration abstraction renderer. 'Networkd' can manage both static and dynamic connections.
 
