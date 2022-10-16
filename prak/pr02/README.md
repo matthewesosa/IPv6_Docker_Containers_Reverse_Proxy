@@ -6,43 +6,64 @@
 
 ## Which docker versions (client, server, API) have you installed?
 
-    * docker version
+* docker version
 
-Client:
+## Client:
+
  Version:           20.10.12
+
  API version:       1.41
+
  Go version:        go1.16.2
+
  Git commit:        20.10.12-0ubuntu2~20.04.1
+
  Built:             Wed Apr  6 02:14:38 2022
+
  OS/Arch:           linux/amd64
+ 
  Context:           default
+
  Experimental:      true
 
-Server:
- Engine:
+## Server:
+    Engine:
+
   Version:          20.10.12
+
   API version:      1.41 (minimum version 1.12)
+
   Go version:       go1.16.2
+
   Git commit:       20.10.12-0ubuntu2~20.04.1
+
   Built:            Thu Feb 10 15:03:35 2022
+
   OS/Arch:          linux/amd64
+
   Experimental:     false
- containerd:
-  Version:          1.5.9-0ubuntu1~20.04.4
-  GitCommit:        
- runc:
-  Version:          1.1.0-0ubuntu1~20.04.1
-  GitCommit:        
- docker-init:
-  Version:          0.19.0
+
+    containerd:
+      Version:          1.5.9-0ubuntu1~20.04.4
+      GitCommit:      
+
+    runc:
+       Version:          1.1.0-0ubuntu1~20.04.1
+       GitCommit:        
+    docker-init:
+       Version:          0.19.0
 
 
-    * docker-compose version
+* docker-compose version
 
 docker-compose version 1.25.0, build unknown
+
 docker-py version: 4.1.0
+
 CPython version: 3.8.10
+
 OpenSSL version: OpenSSL 1.1.1f  31 Mar 2020
+
 
 
 # Task 2 - Primitive web server:
