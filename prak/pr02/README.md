@@ -107,8 +107,7 @@ Explanation of the Dockerfile:
 * docker run -p 20232:5000 --name miniwhoami_2 migbin2s/miniwhoami:latest
 
 # Task 4 - Network Troubleshooting
-## (4a.i) Go docker execinto the container with miniwhoami_1.
-What command do you use to do this?
+## (4a.i) Go docker exec into the container with miniwhoami_1.   What command do you use to do this?
 * docker exec -it miniwhoami_1 sh
 
 ## (4a.ii) Which of the following commands can you execute in the container: ping, ip a, curl, dig, nslookup ?
@@ -116,12 +115,11 @@ What command do you use to do this?
 * ping
 * nslookup
 
-## (4b.i) Now go inside the container using the excellent Netzerk docker tool nicolaka/netshootminiwhoami_1 .
-What command do you use to do this?
+## (4b.i) Now go inside the container using the excellent Netzerk docker tool nicolaka/netshoot miniwhoami_1. What command do you use to do this?
 * docker run -it --net container:miniwhoami_1 nicolaka/netshoot
 
 ## (4b.ii) Which of the following commands can you execute in the container: ping, ip a, curl, dig, nslookup ?
-* I was able to execute all the given commands in the container
+* I was able to execute all the listed commands above in the container
 
 ## (4c) Can you access the container mini_whoami_1 from the container mini_whoami_2?
 * Yes
