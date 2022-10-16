@@ -100,7 +100,7 @@ Explanation of the Dockerfile:
 
 # Task 3 - Service miniwhoami:
 ## (3c) Create one for your program Dockerfile and build a Dockerimage with it miniwhoami. Provide your Dockerfile and the Docker command to create the image.
-* docker build -t mgbin2s/miniwhoami:Latest .
+* docker build -t mgbin2s/miniwhoami:latest .
 
 ## (3d) Deploy with docker run two containers miniwhoami_1 and miniwhoami_2 your web application miniwhoami on your Linux desktop system. To do this, use the ports 20231 and 20232. What are your docker-run commands?
 * docker run -p 20231:5000 --name miniwhoami_1 migbin2s/miniwhoami:latest
