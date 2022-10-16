@@ -121,16 +121,16 @@ Explanation of the Dockerfile:
 ## (4b.ii) Which of the following commands can you execute in the container: ping, ip a, curl, dig, nslookup ?
 * I was able to execute all the listed commands above in the container
 
-## (4c) Can you access the container mini_whoami_1 from the container mini_whoami_2?
-* Yes
+## (4c) Can you access the container miniwhoami_1 from the container miniwhoami_2?
+* Yes. I was able to ping miniwhoami_1 from miniwhoami_2 and vice versa
 
 ## (4d) How are the two containers mini_whoami_1 and mini_whoami_2 connected to each other?
 * They belong to the same bridge network. Docker creates a default bridge network for all containers 
   created in the same host. And the containers can communicate with one another using their assigned IP addresses
 
 
-## (4e) Can you access  heise.de  the website from the container mini_whoami_1?
-* Yes
+## (4e) Can you access  heise.de  the website from the container miniwhoami_1?
+* Yes. I was able to ping heise.de from miniwhoami_1
 
 ## (4f) mini_whoami_1 Specify and interpret the routing table in the container .
 * ip route
