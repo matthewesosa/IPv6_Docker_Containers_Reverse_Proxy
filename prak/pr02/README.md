@@ -124,7 +124,7 @@ Explanation of the Dockerfile:
 ## (4c) Can you access the container miniwhoami_1 from the container miniwhoami_2?
 * Yes. I was able to ping miniwhoami_1 from miniwhoami_2 and vice versa
 
-## (4d) How are the two containers mini_whoami_1 and mini_whoami_2 connected to each other?
+## (4d) How are the two containers miniwhoami_1 and miniwhoami_2 connected to each other?
 * They belong to the same bridge network. Docker creates a default bridge network for all containers 
   created in the same host. And the containers can communicate with one another using their assigned IP addresses
 
