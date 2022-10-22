@@ -1,0 +1,7 @@
+---
+# Basic Configuration for my VM server
+
+- hosts: VM_server
+
+  roles:
+  - basics

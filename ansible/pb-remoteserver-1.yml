@@ -1,0 +1,7 @@
+---
+# Connection check
+
+- hosts: VM_server
+
+  roles:
+  - conn-check

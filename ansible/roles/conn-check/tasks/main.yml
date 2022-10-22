@@ -1,0 +1,19 @@
+- name: Get username
+  become: true
+  command: whoami
+  register: username_on_the_host
+  changed_when: False
+
+- name: Debug
+  debug: 
+    msg: "Logged in as user {{ username_on_the_host.stdout }}"
+
+- name: Now get the username again
+  become: false
+  command: whoami
+  register: username_on_the_host
+  changed_when: False
+
+- name: Debug
+  debug: 
+    msg: "Logged in as user {{ username_on_the_host.stdout }}"
