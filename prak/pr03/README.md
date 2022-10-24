@@ -25,3 +25,47 @@ The command did not work for my remote server serv-ws22  because my remote serve
   
  # Task 3 - Ansible Role: Basics
  Find the playbook pb-remoteserver-2.yml in the ansible folder.
+
+# Task 4 - Ansible-Role: Docker-CE
+## (4a) What version of Docker-CE and Docker-Compose do you have installed? 
+## Client: Docker Engine - Community
+
+ Version:           20.10.20
+
+ API version:       1.41
+
+ Go version:        go1.18.7
+
+ Git commit:        9fdeb9c
+
+ Built:             Tue Oct 18 18:20:18 2022
+
+ OS/Arch:           linux/amd64
+
+ Context:           default
+
+ Experimental:      true
+
+## Server: Docker Engine - Community
+ Engine:
+
+  Version:          20.10.20
+
+  API version:      1.41 (minimum version 1.12)
+
+  Go version:       go1.18.7
+
+  Git commit:       03df974
+
+  Built:            Tue Oct 18 18:18:08 2022
+
+  OS/Arch:          linux/amd64
+
+  Experimental:     false
+
+
+## Docker Compose version v2.12.0
+
+
+## (4b) Are these the current versions?
+- Yes
