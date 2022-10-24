@@ -1,11 +1,7 @@
-- name: Install package - qemu-guest-agent
-  become: true
-  apt:
-    name: qemu-guest-agent
-    state: latest
-
-- name: Install package - Curl
-  become: true
-  apt:
-    name: curl
-    state: latest
+- name: Install basic packages
+  ansible.builtin.apt:
+        name:
+          - curl
+          - qemu-guest-agent
+          - bridge-utils
+        state: latest
