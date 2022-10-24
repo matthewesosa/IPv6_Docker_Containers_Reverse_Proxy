@@ -18,6 +18,12 @@ The command did not work for my remote server serv-ws22  because my remote serve
 
 ## (1c) Go into the directory ansibleand then run an ansible ping against your server serv-ws22  . What's your command?
 * ansible VM_server -m ping
+  
+## (1e) Use a suitable Ansible command to determine which user you are serv-ws22  working as under Ansible on your remote server. What's your command?
+* ansible VM_server -a "whoami"
+
+## (1f) Modify the command to work with Ansible as rooton your server serv-ws22. What's your command? Explain your command.
+* ansible VM_server -a "whoami" --become
 
 # Task 2 - Ansible role: connection check
 ## What command do you use to call your playbook?
