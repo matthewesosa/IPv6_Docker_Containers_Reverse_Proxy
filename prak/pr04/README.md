@@ -106,7 +106,7 @@ Yes, I was able to ping both containers using the IP address and the service nam
 ##  We will now activate IPv6 in Docker and configure it so that containers can be operated with their own IPv6 addresses.
 
 # Task 3 - Docker IPv6 activation
-# (3a.i) Enable IPv6 on your server for your Docker installation by creating the file /etc/docker/daemon.jsonand configuring it appropriately. In the variable "fixed-cidr-v6", the Docker daemon should be given a suitable /80 subnet to use for managing Docker containers. Take this IPv6 subnet from the IPv6 subnet assigned to you /78 . To do this, divide the address space assigned to you into four smaller /80-subnets. Specify these subnets (which you own) explicitly in the solution to this task. From these four subnets, select a subnet that does not contain the address of your server. You pass this subnet to the Docker daemon via the variable "fixed-cidr-v6"to administration. 
+# (3a.i) Enable IPv6 on your server for your Docker installation by creating the file /etc/docker/daemon.json and configuring it appropriately. In the variable "fixed-cidr-v6", the Docker daemon should be given a suitable /80 subnet to use for managing Docker containers. Take this IPv6 subnet from the IPv6 subnet assigned to you /78 . To do this, divide the address space assigned to you into four smaller /80-subnets. Specify these subnets (which you own) explicitly in the solution to this task. From these four subnets, select a subnet that does not contain the address of your server. You pass this subnet to the Docker daemon via the variable "fixed-cidr-v6"to administration. 
 #
 Address space assigned to me: 2001:638:408:200:FF6C::/78 
 
@@ -152,16 +152,15 @@ By default, a docker container is assigned an IPv4 address in a private range wh
 
 ## Task 4 - Docker IPv6 NDP
 
-# (4a) Manual configuration of the NDP function:
-First switch sysctl net.ipv6.conf.ens??.proxy_ndp=1on the NDP proxy function for the correct interface. Use to configure ip -6 neigh add ...  the IPv6 address to which the NDP proxy function should apply. What is the command in detail in your case? Test the NDP functionality by pinging the container's IPv6 address from the outside miniwhoami_20421(see task 5b).
+# (4a) Manual configuration of the NDP function: 
+   # First switch sysctl net.ipv6.conf.ens??.proxy_ndp=1on the NDP proxy function for the correct interface. Use to configure ip -6 neigh add ...  the IPv6 address to which the NDP proxy function should apply. What is the command in detail in your case? Test the NDP functionality by pinging the container's IPv6 address from the outside miniwhoami_20421(see task 5b).
 
 `sysctl net.ipv6.conf.ens18.proxy_ndp=1`
 
 `ip -6 neigh add proxy 2001:638:408:200:ff6d:242:ac11:2 dev ens18`
 
-# (4b) Installing an NDP Proxy:
-The NDP Proxy Daemon ndppd(see GIT ) is also provided via the Ubuntu repo. install with apt install ndppd. You have a template for the required configuration /etc/ndppd.conf file in the file /usr/share/doc/ndppd/ndppd.conf-dist. rule 1111::You only have to customize the interface and the rules ( ). Specifically, you need to 1111:: replace with your subnet (more precisely: replace with the subnet for which you want the NDP function). If you want to NDP more than one subnet, specify multiple rules. The autostart of ndppd was already activated for me; otherwise activate it via systemctl.
-Identify the configuration file you are using ndppd.conf and explain the most important elements of it.
+# (4b) Installing an NDP Proxy: 
+# The NDP Proxy Daemon ndppd(see GIT ) is also provided via the Ubuntu repo. install with apt install ndppd. You have a template for the required configuration /etc/ndppd.conf file in the file /usr/share/doc/ndppd/ndppd.conf-dist. rule 1111::You only have to customize the interface and the rules ( ). Specifically, you need to 1111:: replace with your subnet (more precisely: replace with the subnet for which you want the NDP function). If you want to NDP more than one subnet, specify multiple rules. The autostart of ndppd was already activated for me; otherwise activate it via systemctl. Identify the configuration file you are using ndppd.conf and explain the most important elements of it.
 
 ````
 route-ttl 30000
