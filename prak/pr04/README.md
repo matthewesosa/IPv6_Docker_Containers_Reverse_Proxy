@@ -160,7 +160,7 @@ By default, a docker container is assigned an IPv4 address in a private range wh
 `ip -6 neigh add proxy 2001:638:408:200:ff6d:242:ac11:2 dev ens18`
 
 # (4b) Installing an NDP Proxy: 
-# The NDP Proxy Daemon ndppd(see GIT ) is also provided via the Ubuntu repo. install with apt install ndppd. You have a template for the required configuration /etc/ndppd.conf file in the file /usr/share/doc/ndppd/ndppd.conf-dist. rule 1111::You only have to customize the interface and the rules ( ). Specifically, you need to 1111:: replace with your subnet (more precisely: replace with the subnet for which you want the NDP function). If you want to NDP more than one subnet, specify multiple rules. The autostart of ndppd was already activated for me; otherwise activate it via systemctl. Identify the configuration file you are using ndppd.conf and explain the most important elements of it.
+# The NDP Proxy Daemon ndppd(see `GIT`) is also provided via the Ubuntu repo. install with `apt install ndppd`. You have a template for the required configuration `/etc/ndppd.conf` file in the file `/usr/share/doc/ndppd/ndppd.conf-dist`. rule 1111::You only have to customize the interface and the rules ( ). Specifically, you need to 1111:: replace with your subnet (more precisely: replace with the subnet for which you want the NDP function). If you want to NDP more than one subnet, specify multiple rules. The autostart of ndppd was already activated for me; otherwise activate it via systemctl. Identify the configuration file you are using ndppd.conf and explain the most important elements of it.
 
 ````
 route-ttl 30000
@@ -179,8 +179,5 @@ proxy ens18 {
 * The  configuration file must contain one or more proxy sections, and each of these section must contain one or more rule sections.
 * The ndppd daemon listens on the interface specified . Once  a  Neighbor  Solicitation  message  arrives, it will try to match the target address against the address specified as the argument of the rule section.
 * proxy ens18 : Adds the proxy and binds it to the ens18 interface.  
-* ttl 30000 : sets  ndppd to cache  an entry for 30000milliseconds. 
-* timeout 500 : sets ndppd to wait 500milliseconds  for  a  Neighbor  Advertisement  message  after forwarding  a  Neighbor  Solicitation  message  according  to  the rule. 
-*  router true : 'true' here means ndppd should send the router bit when  sending  Neighbor Advertisement messages.
-
+* ttl 30000 : sets  ndppd to cache  an entry for 30000milliseconds. Harry
 ## Task 5 - Public IPv6 Subnet
