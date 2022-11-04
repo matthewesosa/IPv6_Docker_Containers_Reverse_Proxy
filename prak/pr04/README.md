@@ -61,6 +61,7 @@ I was able to ping the container using the IP address but pinging was not possib
 Yes, I was able to ping both containers using the IP address and the service name?
 
 ## (2g) Test dig the Docker-internal DNS resolution of the services miniwhoami_20412 and miniwhoami_20413. What is your concrete approach and what is the result?
+
 `docker run --rm -it --network mynetwork nicolaka/netshoot`
 
 `dig miniwhoami_20412`
@@ -108,6 +109,7 @@ Yes, I was able to ping both containers using the IP address and the service nam
 # (3a.i) Enable IPv6 on your server for your Docker installation by creating the file /etc/docker/daemon.jsonand configuring it appropriately. In the variable "fixed-cidr-v6", the Docker daemon should be given a suitable /80 subnet to use for managing Docker containers. Take this IPv6 subnet from the IPv6 subnet assigned to you /78 . To do this, divide the address space assigned to you into four smaller /80-subnets. Specify these subnets (which you own) explicitly in the solution to this task. From these four subnets, select a subnet that does not contain the address of your server. You pass this subnet to the Docker daemon via the variable "fixed-cidr-v6"to administration. 
 #
 Address space assigned to me: 2001:638:408:200:FF6C::/78 
+
 IPv6 address of my server: 2001:638:408:200:FF6C::1/64
 #
 I divided the address space assigned to me into these four smaller /80-subnets :
@@ -116,12 +118,16 @@ I divided the address space assigned to me into these four smaller /80-subnets :
 * 2001:638:408:200:FF6E::/80
 * 2001:638:408:200:FF6F::/80
 #
-* `nano /etc/docker/daemon.json`
 
->{
->  "ipv6": true,
->  "fixed-cidr-v6": "2001:638:408:200:ff6d::/80"
->}
+`nano /etc/docker/daemon.json`
+```
+
+{
+  "ipv6": true,
+  "fixed-cidr-v6": "2001:638:408:200:ff6d::/80"
+}
+
+```
 
 `systemctl restart docker`
 
@@ -129,6 +135,7 @@ I divided the address space assigned to me into these four smaller /80-subnets :
 The chosen subnet 2001:638:408:200:FF6D::/80 is assigned to the default docker bridge network, docker 0.
 
 # (3b.i) Which IPv6 address is displayed when you call up miniwhoami_20411 in the browser? Which interface has this IPv6 address. How is this address formed?
+
  * 2001:638:408:200:ff6d:242:ac11:2
   
 This IPv6 address belongs to the IPv6 interface of the container miniwhoami_20411
