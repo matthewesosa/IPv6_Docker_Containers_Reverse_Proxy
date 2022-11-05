@@ -179,5 +179,7 @@ proxy ens18 {
 * The  configuration file must contain one or more proxy sections, and each of these section must contain one or more rule sections.
 * The ndppd daemon listens on the interface specified . Once  a  Neighbor  Solicitation  message  arrives, it will try to match the target address against the address specified as the argument of the rule section.
 * proxy ens18 : Adds the proxy and binds it to the ens18 interface.  
-* ttl 30000 : sets  ndppd to cache  an entry for 30000milliseconds. Harry
+* ttl 30000 : sets  ndppd to cache  an entry for 30000milliseconds.
+*  static : sets ndppd to immediately respond to a  Neighbor Solicitation  Message without querying an  internal interface.
+  
 ## Task 5 - Public IPv6 Subnet
