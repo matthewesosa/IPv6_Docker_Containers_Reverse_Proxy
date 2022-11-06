@@ -38,9 +38,12 @@ The interface eth0 for the containers do not have an IPv6 addresses
 
 `docker ps --format "{{.Names}} {{.Networks}}"`
 #
-* miniwhoami_20413 mynetwork
-* miniwhoami_20412 mynetwork
-* miniwhoami_20411 bridge
+```
+ miniwhoami_20412 mynetwork
+ miniwhoami_20413 mynetwork
+ miniwhoami_20411 bridge
+
+ ```
 
 ## (2c) Go into your miniwhoami containers and test which containers give you access to the outside world. Interpret your result.
 The three containers gave me access to the outside world.
@@ -76,7 +79,7 @@ Yes, I was able to ping both containers using the IP address and the service nam
 >;miniwhoami_20412.              IN      A
 >
 >;; ANSWER SECTION:
->miniwhoami_20412.       600     IN      A       172.22.0.3
+>miniwhoami_20412.       600     IN      A       172.19.0.2
 >
 >;; Query time: 0 msec
 >;; SERVER: 127.0.0.11#53(127.0.0.11) (UDP)
@@ -95,7 +98,7 @@ Yes, I was able to ping both containers using the IP address and the service nam
 >;miniwhoami_20413.              IN      A
 >
 >;; ANSWER SECTION:
->miniwhoami_20413.       600     IN      A       172.22.0.2
+>miniwhoami_20413.       600     IN      A       172.19.0.3
 >
 >;; Query time: 0 msec
 >;; SERVER: 127.0.0.11#53(127.0.0.11) (UDP)
@@ -214,4 +217,56 @@ proxy ens18 {
 }
 
 ```
+# Task 6 - Services with public IPv6 address
+## my_ipv6 You have the following three global IPv6 addresses in your IPv6 subnet  :
+* ipv6_1: 2001:638:408:200:ff6c:cafe::1111/96
+* ipv6_2: 2001:638:408:200:ff6c:cafe::2222/96
+* ipv6_3: 2001:638:408:200:ff6c:cafe::3333/96
+#
+## (6a) Deploy docker run your web application miniwhoami to your lab server as a container with global IP address ipv6_1 serv-ws22. Which command do you use for this?
+ `docker run --restart always -d --network my_ipv6 --ip6=2001:638:408:200:ff6c:cafe::1111 --name=miniwhoami1 docker.fslab.de/migbin2s/servmgmt-ws22/miniwhoami`
 
+ ## (6b) miniwhoami Deploy two more instances of your web application with global IP addresses ipv6_2 and ipv6_3 to your lab server using a docker-compose file serv-ws22. Enter your compose file.
+
+ ```
+services:
+  miniwhoami2:
+    container_name: miniwhoami2
+    image: docker.fslab.de/migbin2s/servmgmt-ws22/miniwhoami
+    networks:
+      my_ipv6:
+        ipv6_address: 2001:638:408:200:ff6c:cafe::2222
+    restart: always
+
+  miniwhoami3:
+    container_name: miniwhoami3
+    image: docker.fslab.de/migbin2s/servmgmt-ws22/miniwhoami
+    networks:
+      my_ipv6:
+        ipv6_address: 2001:638:408:200:ff6c:cafe::3333
+    restart: always
+
+networks:
+  my_ipv6:
+    name: my_ipv6
+    external: true
+
+```
+`docker compose -f docker-compose_2.yml up -d`
+
+## (6c) You now have three services miniwhoami1, miniwhoami2 and miniwhoami3deployed, each of which can be reached via its own IPv6 address. Configure your domain url.my in Cloudflare so that your services are reachable via miniwhoami1.yourDomain.xy, ,  miniwhoami2.yourDomain.xyand  miniwhoami3.yourDomain.xy.
+
+## (6d) Ping my service miniwhoami1using the url miniwhoami1.servmgmt.de. What did you notice? How do you interpret the result?
+
+#
+
+
+My solution:
+
+http://[2001:638:408:200:ff6c:cafe::1111]  ,   http://miniwhoami1.migbin2s-servemgmt.de
+http://[2001:638:408:200:ff6c:cafe::2222]  ,   http://miniwhoami2.migbin2s-servemgmt.site
+http://[2001:638:408:200:ff6c:cafe::3333]  ,   http://miniwhoami3.migbin2s-servemgmt.site
+
+
+## Task 7 - Local IPv6 subnet
+ 

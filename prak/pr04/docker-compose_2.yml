@@ -1,0 +1,21 @@
+services:
+  miniwhoami2:
+    container_name: miniwhoami2
+    image: docker.fslab.de/migbin2s/servmgmt-ws22/miniwhoami
+    networks:
+      my_ipv6:
+        ipv6_address: 2001:638:408:200:ff6c:cafe::2222
+    restart: always
+
+  miniwhoami3:
+    container_name: miniwhoami3
+    image: docker.fslab.de/migbin2s/servmgmt-ws22/miniwhoami
+    networks:
+      my_ipv6:
+        ipv6_address: 2001:638:408:200:ff6c:cafe::3333
+    restart: always
+
+networks:
+  my_ipv6:
+    name: my_ipv6
+    external: true
