@@ -14,7 +14,7 @@
 
 `docker pull docker.fslab.de/migbin2s/servmgmt-ws22/miniwhoami`
   
-`docker run -p 20411:5000 --name miniwhoami_20411 --restart=always -d docker.fslab.de/migbin2s/servmgmt-ws22/miniwhoami`
+`docker run -p 20411:80 --name miniwhoami_20411 --restart=always -d docker.fslab.de/migbin2s/servmgmt-ws22/miniwhoami`
 
 ## (1e) miniwhoami_20412 Deploy two services and miniwhoami_20413 your web application miniwhoamito your lab server using a docker-compose file serv-ws22. To do this, use the ports 20412 and 20413. Both containers should be connected to mynetworkeach other via a common network.
 #
@@ -106,7 +106,7 @@ Yes, I was able to ping both containers using the IP address and the service nam
 ##  We will now activate IPv6 in Docker and configure it so that containers can be operated with their own IPv6 addresses.
 
 # Task 3 - Docker IPv6 activation
-# (3a.i) Enable IPv6 on your server for your Docker installation by creating the file /etc/docker/daemon.json and configuring it appropriately. In the variable "fixed-cidr-v6", the Docker daemon should be given a suitable /80 subnet to use for managing Docker containers. Take this IPv6 subnet from the IPv6 subnet assigned to you /78 . To do this, divide the address space assigned to you into four smaller /80-subnets. Specify these subnets (which you own) explicitly in the solution to this task. From these four subnets, select a subnet that does not contain the address of your server. You pass this subnet to the Docker daemon via the variable "fixed-cidr-v6"to administration. 
+## (3a.i) Enable IPv6 on your server for your Docker installation by creating the file /etc/docker/daemon.json and configuring it appropriately. In the variable "fixed-cidr-v6", the Docker daemon should be given a suitable /80 subnet to use for managing Docker containers. Take this IPv6 subnet from the IPv6 subnet assigned to you /78 . To do this, divide the address space assigned to you into four smaller /80-subnets. Specify these subnets (which you own) explicitly in the solution to this task. From these four subnets, select a subnet that does not contain the address of your server. You pass this subnet to the Docker daemon via the variable "fixed-cidr-v6"to administration. 
 #
 Address space assigned to me: 2001:638:408:200:FF6C::/78 
 
@@ -131,36 +131,36 @@ I divided the address space assigned to me into these four smaller /80-subnets :
 
 `systemctl restart docker`
 
-# (3a.ii) Which bridge is assigned to the subnet you have chosen?
+## (3a.ii) Which bridge is assigned to the subnet you have chosen?
 The chosen subnet 2001:638:408:200:FF6D::/80 is assigned to the default docker bridge network, docker 0.
 
-# (3b.i) Which IPv6 address is displayed when you call up miniwhoami_20411 in the browser? Which interface has this IPv6 address. How is this address formed?
+## (3b.i) Which IPv6 address is displayed when you call up miniwhoami_20411 in the browser? Which interface has this IPv6 address. How is this address formed?
 
  * 2001:638:408:200:ff6d:242:ac11:2
   
 This IPv6 address belongs to the IPv6 interface of the container miniwhoami_20411
 The IPv6 address was formed using a combination of 80bits we provided in the IPv6 prefix for the subnet and 48bits from the MAC address of the container.
 
-# (3b.ii) From where can the container miniwhoami_20411 be pinged using this IPv6 address? Which IPv6 addresses can be miniwhoami_20411 reached via ping?
+## (3b.ii) From where can the container miniwhoami_20411 be pinged using this IPv6 address? Which IPv6 addresses can be miniwhoami_20411 reached via ping?
 
-# (3b.iii) miniwhoami_20411 In the containing container , check ip -6 r the routing table. Is the /80 IPv6 subnet routed correctly? What is the routing problem, do you analyze the situation?
+## (3b.iii) miniwhoami_20411 In the containing container , check ip -6 r the routing table. Is the /80 IPv6 subnet routed correctly? What is the routing problem, do you analyze the situation?
 
-# (3b.iv) Why is the container miniwhoami_20411 reached via the IPv6 server address (nevertheless)?
+## (3b.iv) Why is the container miniwhoami_20411 reached via the IPv6 server address (nevertheless)?
 By default, a docker container is assigned an IPv4 address in a private range which the Docker daemon will then NAT to the host's address. Hence, we can do port forwarding from containers to be visible at ports on the host's IP address
 
-# (3b.v) What requirements must be met so that the container miniwhoami_20411 can be reached from outside via its own IPv6 address?
+## (3b.v) What requirements must be met so that the container miniwhoami_20411 can be reached from outside via its own IPv6 address?
 
-## Task 4 - Docker IPv6 NDP
+# Task 4 - Docker IPv6 NDP
 
-# (4a) Manual configuration of the NDP function: 
+## (4a) Manual configuration of the NDP function: 
    # First switch sysctl net.ipv6.conf.ens??.proxy_ndp=1on the NDP proxy function for the correct interface. Use to configure ip -6 neigh add ...  the IPv6 address to which the NDP proxy function should apply. What is the command in detail in your case? Test the NDP functionality by pinging the container's IPv6 address from the outside miniwhoami_20421(see task 5b).
 
 `sysctl net.ipv6.conf.ens18.proxy_ndp=1`
 
 `ip -6 neigh add proxy 2001:638:408:200:ff6d:242:ac11:2 dev ens18`
 
-# (4b) Installing an NDP Proxy: 
-# The NDP Proxy Daemon ndppd(see `GIT`) is also provided via the Ubuntu repo. install with `apt install ndppd`. You have a template for the required configuration `/etc/ndppd.conf` file in the file `/usr/share/doc/ndppd/ndppd.conf-dist`. rule 1111::You only have to customize the interface and the rules ( ). Specifically, you need to 1111:: replace with your subnet (more precisely: replace with the subnet for which you want the NDP function). If you want to NDP more than one subnet, specify multiple rules. The autostart of ndppd was already activated for me; otherwise activate it via systemctl. Identify the configuration file you are using ndppd.conf and explain the most important elements of it.
+## (4b) Installing an NDP Proxy: 
+## The NDP Proxy Daemon ndppd(see `GIT`) is also provided via the Ubuntu repo. install with `apt install ndppd`. You have a template for the required configuration `/etc/ndppd.conf` file in the file `/usr/share/doc/ndppd/ndppd.conf-dist`. rule 1111::You only have to customize the interface and the rules ( ). Specifically, you need to 1111:: replace with your subnet (more precisely: replace with the subnet for which you want the NDP function). If you want to NDP more than one subnet, specify multiple rules. The autostart of ndppd was already activated for me; otherwise activate it via systemctl. Identify the configuration file you are using ndppd.conf and explain the most important elements of it.
 
 ````
 route-ttl 30000
@@ -181,5 +181,37 @@ proxy ens18 {
 * proxy ens18 : Adds the proxy and binds it to the ens18 interface.  
 * ttl 30000 : sets  ndppd to cache  an entry for 30000milliseconds.
 *  static : sets ndppd to immediately respond to a  Neighbor Solicitation  Message without querying an  internal interface.
+*  router <true/false> : Controls if ndppd should send the router bit when  sending Neighbor Advertisement messages
   
-## Task 5 - Public IPv6 Subnet
+# Task 5 - Public IPv6 Subnet
+## 2001:638:408:200:ff??::/78A public IPv6 Docker subnet should be set up in the address space assigned to you my_ipv6. This subnet is used for dedicated public IPv6 servers with static IPv6 addresses.
+## The address space of this IPv6 subnet my_ipv6should be specified as follows: 2001:638:408:200:ff??:cafe::/96. (?? = lowest possible address.)
+#
+## (5a) Is the size of this subnet sufficient? Justify your answer.
+
+## (5b) Set up your IPv6 subnet  my_ipv6on your server serv-ws22. What is the mesh generation command?
+
+` docker network create --subnet "2001:638:408:200:ff6c:cafe::/96" --ipv6 my_ipv6`
+
+## (5c) Adjust the configuration file ndppd.conf so that the NDP Proxy Daemon also resolves ndppd addresses from the IPv6 subnet . my_ipv6
+
+```
+route-ttl 30000
+proxy ens18 {
+   router true
+   timeout 500
+   ttl 30000
+
+   rule 2001:638:408:200:ff6d::/80 {
+
+      static
+   }
+
+   rule 2001:638:408:200:ff6c:cafe::/96 {
+
+      static
+   }
+}
+
+```
+

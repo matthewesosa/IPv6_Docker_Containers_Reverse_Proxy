@@ -103,8 +103,8 @@ Explanation of the Dockerfile:
 * docker build -t mgbin2s/miniwhoami:latest .
 
 ## (3d) Deploy with docker run two containers miniwhoami_1 and miniwhoami_2 your web application miniwhoami on your Linux desktop system. To do this, use the ports 20231 and 20232. What are your docker-run commands?
-* docker run -p 20231:5000 --name miniwhoami_1 migbin2s/miniwhoami:latest
-* docker run -p 20232:5000 --name miniwhoami_2 migbin2s/miniwhoami:latest
+* docker run -p 20231:80 --name miniwhoami_1 migbin2s/miniwhoami:latest
+* docker run -p 20232:80 --name miniwhoami_2 migbin2s/miniwhoami:latest
 
 # Task 4 - Network Troubleshooting
 ## (4a.i) Go docker exec into the container with miniwhoami_1.   What command do you use to do this?

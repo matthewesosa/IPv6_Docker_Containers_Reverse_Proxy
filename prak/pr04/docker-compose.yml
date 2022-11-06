@@ -4,7 +4,7 @@ services:
       image: docker.fslab.de/migbin2s/servmgmt-ws22/miniwhoami
       container_name: "miniwhoami_20412"
       ports:
-        - 20412:5000
+        - 20412:80
       networks:
         - mynetwork
 
@@ -13,7 +13,7 @@ services:
       image: docker.fslab.de/migbin2s/servmgmt-ws22/miniwhoami
       container_name: "miniwhoami_20413"
       ports:
-        - 20413:5000
+        - 20413:80
       networks:
         - mynetwork
 
