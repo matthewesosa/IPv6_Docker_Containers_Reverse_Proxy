@@ -30,9 +30,9 @@ The interface eth0 for the containers do not have an IPv6 addresses
 #
 | ContainerName     | IP_Address        | NetMask            |DefaultGateway      |	
 |:-----------------:|:-----------------:|:------------------:|:------------------:|
-|miniwhoami_20411   |172.17.0.2         | 255.255.0.0	     |172.17.0.1          |
-|miniwhoami_20412   |172.22.0.3         | 255.255.0.0        |172.22.0.1          |
-|miniwhoami_20413   |172.22.0.2         | 255.255.0.0        |172.22.0.1          |
+|miniwhoami_20411   |172.17.0.2         | 255.255.0.0	       |172.17.0.1          |
+|miniwhoami_20412   |172.19.0.2         | 255.255.0.0        |172.19.0.2          |
+|miniwhoami_20413   |172.19.0.3         | 255.255.0.0        |172.19.0.3          |
 
 ## (2b) docker network ls Output a list of docker nets with the command . Which networks are your containers connected to? What command are you using to determine this?
 
