@@ -263,7 +263,7 @@ networks:
 
 My solution:
 
-[http://[2001:638:408:200:ff6c:cafe::1111]](http://[2001:638:408:200:ff6c:cafe::1111]) ,    [http://miniwhoami1.migbin2s-servemgmt.site](http://miniwhoami1.migbin2s-servemgmt.site)
+[http://2001:638:408:200:ff6c:cafe::1111](http://2001:638:408:200:ff6c:cafe::1111) ,    [http://miniwhoami1.migbin2s-servemgmt.site](http://miniwhoami1.migbin2s-servemgmt.site)
 
 
 http://[2001:638:408:200:ff6c:cafe::2222]     http://miniwhoami2.migbin2s-servemgmt.site
