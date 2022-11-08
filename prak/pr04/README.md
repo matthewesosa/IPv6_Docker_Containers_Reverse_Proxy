@@ -263,7 +263,9 @@ networks:
 * My Solution:
   
 http://[2001:638:408:200:ff6c:cafe::1111]  ,   http://miniwhoami1.migbin2s-servemgmt.site
+
 http://[2001:638:408:200:ff6c:cafe::2222]  ,   http://miniwhoami2.migbin2s-servemgmt.site
+
 http://[2001:638:408:200:ff6c:cafe::3333]  ,   http://miniwhoami3.migbin2s-servemgmt.site
 
 ## (6d) Ping my service miniwhoami1using the url miniwhoami1.servmgmt.de. What did you notice? How do you interpret the result?
