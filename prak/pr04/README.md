@@ -135,7 +135,8 @@ I divided the address space assigned to me into these four smaller /80-subnets :
 
 `systemctl restart docker`
 
-## (3a.ii) Which bridge is assigned to the subnet you have chosen?CDN providerrk, docker 0.
+## (3a.ii) Which bridge is assigned to the subnet you have chosen?
+The chosen subnet 2001:638:408:200:FF6D::/80 is assigned to the default docker bridge network, docker 0.
 
 ## (3b.i) Which IPv6 address is displayed when you call up miniwhoami_20411 in the browser? Which interface has this IPv6 address. How is this address formed?
 
