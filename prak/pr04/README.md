@@ -152,6 +152,7 @@ The IPv6 address was formed using a combination of 80bits we provided in the IPv
 By default, a docker container is assigned an IPv4 address in a private range which the Docker daemon will then NAT to the host's address. Hence, we can do port forwarding from containers to be visible at ports on the host's IP address
 
 ## (3b.v) What requirements must be met so that the container miniwhoami_20411 can be reached from outside via its own IPv6 address?
+NDP proxy has to be enabled such that the Docker host can listen to neighbour solicitation requests for the container's IP address and send a confirmation response that it is responsible for the IP address.
 
 # Task 4 - Docker IPv6 NDP
 
@@ -193,6 +194,7 @@ proxy ens18 {
 ## The address space of this IPv6 subnet my_ipv6should be specified as follows: 2001:638:408:200:ff??:cafe::/96. (?? = lowest possible address.)
 #
 ## (5a) Is the size of this subnet sufficient? Justify your answer.
+Yes, (128 - 96) = 32bits of address space is still available.
 
 ## (5b) Set up your IPv6 subnet  my_ipv6on your server serv-ws22. What is the mesh generation command?
 
