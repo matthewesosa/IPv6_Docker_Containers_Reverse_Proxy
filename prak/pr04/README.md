@@ -1,6 +1,7 @@
 # Task 1 - remote deployment of miniwhoami
 
 ## (1b) Create miniwhoami a tagged Docker registry for your web application Dockerimage . Which docker command can you use for this?
+2001:638:408:200:ff3c:242:ac11:2/80
 
 `docker login docker.fslab.de`
 
@@ -26,7 +27,7 @@ Find the docker-compose file in the folder pr04
 # Task 2 - Investigation of network structures
 ## (2a) Your three miniwhoamicontainers miniwhoami_20411, miniwhoami_20412and miniwhoami_20413 each have an IPv4 interface eth0. Create a list for your three miniwhoamicontainers with the columns: container name, IP address, netmask, default gateway. Does the interface eth0 also have an IPv6 address?
 #
-The interface eth0 for the containers do not have an IPv6 addresses
+The interface eth0 for the containers do not have IPv6 addresses
 #
 | ContainerName     | IP_Address        | NetMask            |DefaultGateway      |	
 |:-----------------:|:-----------------:|:------------------:|:------------------:|
@@ -134,8 +135,7 @@ I divided the address space assigned to me into these four smaller /80-subnets :
 
 `systemctl restart docker`
 
-## (3a.ii) Which bridge is assigned to the subnet you have chosen?
-The chosen subnet 2001:638:408:200:FF6D::/80 is assigned to the default docker bridge network, docker 0.
+## (3a.ii) Which bridge is assigned to the subnet you have chosen?CDN providerrk, docker 0.
 
 ## (3b.i) Which IPv6 address is displayed when you call up miniwhoami_20411 in the browser? Which interface has this IPv6 address. How is this address formed?
 
@@ -179,6 +179,8 @@ proxy ens18 {
 }
 
 ````
+`systemctl restart ndppd`
+
 * The  configuration file must contain one or more proxy sections, and each of these section must contain one or more rule sections.
 * The ndppd daemon listens on the interface specified . Once  a  Neighbor  Solicitation  message  arrives, it will try to match the target address against the address specified as the argument of the rule section.
 * proxy ens18 : Adds the proxy and binds it to the ens18 interface.  
@@ -217,6 +219,8 @@ proxy ens18 {
 }
 
 ```
+`systemctl restart ndppd`
+
 # Task 6 - Services with public IPv6 address
 ## my_ipv6 You have the following three global IPv6 addresses in your IPv6 subnet  :
 * ipv6_1: 2001:638:408:200:ff6c:cafe::1111/96
@@ -256,9 +260,16 @@ networks:
 
 ## (6c) You now have three services miniwhoami1, miniwhoami2 and miniwhoami3deployed, each of which can be reached via its own IPv6 address. Configure your domain url.my in Cloudflare so that your services are reachable via miniwhoami1.yourDomain.xy, ,  miniwhoami2.yourDomain.xyand  miniwhoami3.yourDomain.xy.
 
+* My Solution:
+  
+http://[2001:638:408:200:ff6c:cafe::1111]  ,   http://miniwhoami1.migbin2s-servemgmt.site
+http://[2001:638:408:200:ff6c:cafe::2222]  ,   http://miniwhoami2.migbin2s-servemgmt.site
+http://[2001:638:408:200:ff6c:cafe::3333]  ,   http://miniwhoami3.migbin2s-servemgmt.site
+
 ## (6d) Ping my service miniwhoami1using the url miniwhoami1.servmgmt.de. What did you notice? How do you interpret the result?
 
 #
 
 ## Task 7 - Local IPv6 subnet
+
  
