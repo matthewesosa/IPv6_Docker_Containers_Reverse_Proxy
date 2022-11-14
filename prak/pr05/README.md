@@ -80,11 +80,6 @@ http {
 ```
 
 ## (1d) Start and test your server.
-My solution:
-
-http://www.migbin2s-servemgmt.site
-
-http://[2001:638:408:200:ff6c:cafe:0:7777]
 
 # Task 2 - HTTPS server
 ## (2a) Enable CDN proxying for your server with the URL www.yourDomain.xy so that your server is reachable with http. Which IPv6 address is used to www.yourDomain.xy reach your server from the outside.
