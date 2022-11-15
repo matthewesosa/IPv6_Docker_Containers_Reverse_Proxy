@@ -87,3 +87,20 @@ http {
 ## (2b) Set up the CDN proxy to support access to your Nginx server with both http(= unsecured) and with https.
 
 ## (2c) How do you rate the security of your https web server?
+* Though HTTPS guarantees that communication is private and encrypted, the trustworthiness of the CA should also be put into consideration. Specific level of trust even for a CA is still relative hence there could still be various risk if for example there is an internal compromise in the CA.
+
+In general, top 10 security vulnerabilities as defined by the Open Web Security Project (OWASP) are:
+* SQL Injection
+* Cross Site Scripting
+* Broken Authentication and Session Management
+* Insecure Direct Object References
+* Cross Site Request Forgery
+* Security Misconfiguration
+* Insecure Cryptographic Storage
+* Failure to restrict URL Access
+* Insufficient Transport Layer Protection
+* Unvalidated Redirects and Forwards
+
+
+# Task 3 - reverse proxy
+## (3a) Create a Docker compose file that  starts loc_ipv6 two miniwhoami services on the network miniwhoami-loc1and miniwhoami-loc2. Now set up your web server as a reverse proxy for these two miniwhoami services. Identify the configuration file you are using /etc/nginx/nginx.confand explain this file in detail.

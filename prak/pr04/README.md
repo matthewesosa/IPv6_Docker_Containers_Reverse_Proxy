@@ -275,6 +275,11 @@ http://[2001:638:408:200:ff6c:cafe::3333]  ,   http://miniwhoami3.migbin2s-serve
 
 #
 
-## Task 7 - Local IPv6 subnet
+# Task 7 - Local IPv6 subnet
+## (7a) Create in serv-ws22 a local IPv6 network loc_ipv6 with the address space fd00:dead:beef::/48 on your Docker host . What command do you use to do this? loc_ipv6 Our local IPv6 services will run on the network .
+
+`docker network create --subnet "d00:dead:beef::/48" --ipv6 loc_ipv6`
+
+
 
  
