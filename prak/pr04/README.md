@@ -1,7 +1,6 @@
 # Task 1 - remote deployment of miniwhoami
 
 ## (1b) Create miniwhoami a tagged Docker registry for your web application Dockerimage . Which docker command can you use for this?
-2001:638:408:200:ff3c:242:ac11:2/80
 
 `docker login docker.fslab.de`
 
