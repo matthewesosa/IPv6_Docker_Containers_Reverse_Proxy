@@ -270,7 +270,21 @@ http://[2001:638:408:200:ff6c:cafe::2222]  ,   http://miniwhoami2.migbin2s-serve
 
 http://[2001:638:408:200:ff6c:cafe::3333]  ,   http://miniwhoami3.migbin2s-servemgmt.site
 
-## (6d) Ping my service miniwhoami1using the url miniwhoami1.servmgmt.de. What did you notice? How do you interpret the result?
+## (6d) Ping my service miniwhoami1 using the url miniwhoami1.servmgmt.de. What did you notice? How do you interpret the result?
+As seen below the ICMP echo reply is not coming from your configured IP address `2001:638:408:200:ff00:cafe::1111` . It is coming from `2a06:98c1:3120:::` which is a Cloudflare IP address due to Cloudflare proxying. The ping did not go through the proxy because ping uses the ICMP protocol to communicate, proxy only supports TCP and UDP packets.
+```
+Pinging miniwhoami1.servmgmt.de [2a06:98c1:3120::] with 32 bytes of data:
+Reply from 2a06:98c1:3120::: time=14ms
+Reply from 2a06:98c1:3120::: time=12ms
+Reply from 2a06:98c1:3120::: time=10ms
+Reply from 2a06:98c1:3120::: time=8ms
+
+Ping statistics for 2a06:98c1:3120:::
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 8ms, Maximum = 14ms, Average = 11ms
+
+```
 
 #
 
