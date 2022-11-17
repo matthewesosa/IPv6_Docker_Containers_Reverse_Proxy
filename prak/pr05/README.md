@@ -52,9 +52,10 @@ http {
   sendfile on;
 
    server {
-        listen 80;
-        listen [::]:80;
-        server_name "";
+        listen 80;       # listening on port 80 for all IPv4 address
+        listen [::]:80;  # listening on port 80 for all IPv6 address
+
+        server_name "";  # implies all other server name not defined 
 
       location / {
           root /usr/share/nginx/html;
@@ -64,8 +65,9 @@ http {
 
 
   server {
-    listen 80;
-    listen [::]:80;
+    listen 80;    
+    listen [::]:80;  
+
     server_name migbin2s-servemgmt.site  www.migbin2s-servemgmt.site;
 
     location / {
@@ -103,4 +105,11 @@ In general, top 10 security vulnerabilities as defined by the Open Web Security 
 
 
 # Task 3 - reverse proxy
-## (3a) Create a Docker compose file that  starts loc_ipv6 two miniwhoami services on the network miniwhoami-loc1and miniwhoami-loc2. Now set up your web server as a reverse proxy for these two miniwhoami services. Identify the configuration file you are using /etc/nginx/nginx.confand explain this file in detail.
+## (3a) Create a Docker compose file that  starts loc_ipv6 two miniwhoami services on the network miniwhoami-loc1 and miniwhoami-loc2. Now set up your web server as a reverse proxy for these two miniwhoami services. Identify the configuration file you are using /etc/nginx/nginx.confand explain this file in detail.
+
+## (3d) Run the http echo service echo on your server serv-ws22 behind your reverse proxy, so you echocan invoke the service through the reverse proxy in the following way:
+## http://echo.yourDomain.xyor.
+## https://echo.yourDomain.xy.
+## Compare and analyze the different calls.
+`docker run --restart unless-stopped -d --network loc_ipv6 --name=echo ealen/echo-server`
+

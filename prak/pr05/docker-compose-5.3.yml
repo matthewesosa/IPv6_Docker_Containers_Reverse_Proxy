@@ -1,0 +1,18 @@
+services:
+  miniwhoami-loc1:
+    container_name: miniwhoami-loc1
+    image: docker.fslab.de/migbin2s/servmgmt-ws22/miniwhoami
+    networks:
+      loc_ipv6:
+    restart: unless-stopped
+  miniwhoami-loc2:
+    container_name: miniwhoami-loc2
+    image: docker.fslab.de/migbin2s/servmgmt-ws22/miniwhoami
+    networks:
+      loc_ipv6:
+    restart: unless-stopped
+
+networks:
+  loc_ipv6:
+    name: loc_ipv6
+    external: true
