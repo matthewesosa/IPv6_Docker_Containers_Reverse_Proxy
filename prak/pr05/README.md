@@ -19,7 +19,7 @@ services:
     ports:
       - 80:80
     image: nginx:latest
-    volumes:  # I used bind mount with exact reference to my present docker-compose-5.1.yml directory
+    volumes:  # I made use of the default path for nginx and I used bind mount with exact reference to my present docker-compose-5.1.yml directory
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro   # ro here defines read only
       - ./nginx/ssl:/etc/nginx/ssl
       - ./nginx/websites:/usr/share/nginx/html
