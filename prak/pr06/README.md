@@ -5,7 +5,7 @@
 ## (1b.i) What HTTP load balancing methods are there? How do these work?
 * Round-robbin: requests are sent to each upstream server one at a time such that the load is evenly distributed with no preference given to any of the server.
 
-* Least Connection: the load balancer considers the number of connections an upsrteam server is already processing and the server withe fewest connections would be preferred for every new request.
+* Least Connection: the algorithm considers the number of connections an upsrteam server is already processing and the server with the least number of active connections would be preferred for every new request.
   
 * IP_hash: this is used for session persistence. It considers the IP address of the client making the request then it choses an upsream server to handle the request; if the client IP address stys the same, then the same upstream server will handle any future request made by the client 
 
