@@ -41,14 +41,11 @@ networks:    # both networks were already created externally
 #
 
 ```
-events {
-worker_connections  4096;
-
-}
+events { }
 
 
 http {
-  include /etc/nginx/mime.types;
+  include /etc/nginx/mime.types; # media type/content type defining all content that can be displayed
   sendfile on;
 
    server {
@@ -61,6 +58,7 @@ http {
           root /usr/share/nginx/html;
           index undefined.html;
       }
+
     }
 
 
@@ -70,6 +68,7 @@ http {
 
     server_name migbin2s-servemgmt.site  www.migbin2s-servemgmt.site;
 
+# since no location modifier is given, the location definition is treated as a prefix to the URI
     location / {
       root /usr/share/nginx/html;
       index index.html;
@@ -84,7 +83,8 @@ http {
 ## (1d) Start and test your server.
 
 # Task 2 - HTTPS server
-## (2a) Enable CDN proxying for your server with the URL www.yourDomain.xy so that your server is reachable with http. Which IPv6 address is used to www.yourDomain.xy reach your server from the outside.
+## (2a) Activate the CDN proxy functions for your server with the URL www.yourDomain.xy so that your server can be reached with http. Which IPv6 address is now used to reach your server from outside via www.yourDomain.xy?
+Cloudflares' IPv6 address due to the proxy.
 
 ## (2b) Set up the CDN proxy to support access to your Nginx server with both http(= unsecured) and with https.
 
@@ -105,11 +105,57 @@ In general, top 10 security vulnerabilities as defined by the Open Web Security 
 
 
 # Task 3 - reverse proxy
-## (3a) Create a Docker compose file that  starts loc_ipv6 two miniwhoami services on the network miniwhoami-loc1 and miniwhoami-loc2. Now set up your web server as a reverse proxy for these two miniwhoami services. Identify the configuration file you are using /etc/nginx/nginx.confand explain this file in detail.
+## (3a) Create a Docker compose file that  starts two miniwhoami services miniwhoami-loc1 and miniwhoami-loc2 on the network loc_ipv6. Now set up your web server as a reverse proxy for these two miniwhoami services. Identify the configuration file you are using /etc/nginx/nginx.conf and explain this file in detail.
+```
+-------------------# NOTE: see the complete file in nginx.conf
 
-## (3d) Run the http echo service echo on your server serv-ws22 behind your reverse proxy, so you echocan invoke the service through the reverse proxy in the following way:
-## http://echo.yourDomain.xyor.
+server{
+#  listening on port 80 and 443 for all IPv4 and IPv6 address
+    listen 80;
+    listen [::]:80;
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    ssl on;
+# path to SSL/TLS certificate obtained from my CA (Cloudflare)
+    ssl_certificate /etc/nginx/ssl/migbin2s-servemgmt.pem;
+    ssl_certificate_key /etc/nginx/ssl/migbin2s-servemgmt.key;
+
+    server_name miniwhoami-loc1.migbin2s-servemgmt.site;
+
+# traffic for the '/' location is sent with the proxy_pass directive to the http resource defined (i.e miniwhoami-loc in this case) 
+    location / {
+        proxy_pass http://miniwhoami-loc1;
+    }
+}
+
+
+server{
+
+    listen 80;
+    listen [::]:80;
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    ssl on;
+    ssl_certificate /etc/nginx/ssl/migbin2s-servemgmt.pem;
+    ssl_certificate_key /etc/nginx/ssl/migbin2s-servemgmt.key;
+
+    server_name miniwhoami-loc2.migbin2s-servemgmt.site;
+
+    location / {
+        proxy_pass http://miniwhoami-loc2;
+    }
+
+}
+
+
+```
+
+
+## (3d) Run the http echo service echo on your server serv-ws22 behind your reverse proxy, so your echo can invoke the service through the reverse proxy in the following way:
+## http://echo.yourDomain.xy  or
 ## https://echo.yourDomain.xy.
+
 ## Compare and analyze the different calls.
+
 `docker run --restart unless-stopped -d --network loc_ipv6 --name=echo ealen/echo-server`
 
