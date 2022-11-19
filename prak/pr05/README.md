@@ -4,11 +4,11 @@
 
 # Task 1 - Nginx
 ## (1b) Question : Why is it useful in many cases to block access to the web server using an IP address?
-* Secure websites use certificates for verification and the certificates are primarily associated with domain names not IP address.
+* Secure websites use certificates for verification and the certificates are primarily associated with domain names not just IP address.
 
-* And at any given time, the website can hosted under a new/different provider with another IP address anywhere in the world.
+* And at any given time, the website can be hosted under a new/different provider with another IP address anywhere in the world.
   
-* In practice most web servers are usually accessed via a proxy/loadbalancer for security and efficient traffik distribution. Hence accessing the server directly with its Ip address defeats this objective.
+* In practice most web servers are usually accessed via a proxy/loadbalancer for security and efficient traffic distribution. Hence accessing the server directly with its IP address defeats this objective.
 .
 ## (1b)Provide your docker compose file and configuration file /etc/nginx/nginx.conf. Explain both files in detail.
 
