@@ -1,4 +1,7 @@
-### NOTE: where applicable throughout this project, I added my user name "migbin2s/" as a convenient naming convention for my docker images.
+# Internship Sheet 2 - Docker + Miniwhoami (local desktop)
+ 
+
+## NOTE: where a naming convention was not specified throughout this project, I added my user name "migbin2s/" as a convenient naming convention for my docker images.
 
 # Task 1 - Install Docker and Docker-Compose:
   `apt install docker`
@@ -75,6 +78,7 @@ OpenSSL version: OpenSSL 1.1.1f  31 Mar 2020
 
 Explanation of the Dockerfile:
 
+```
 #initialize a base image
 
 * FROM python:3.8.10-alpine
@@ -91,6 +95,7 @@ Explanation of the Dockerfile:
 #define the command to start the container
 * CMD ["python","miniserver.py"]
 
+```
 ## (2d) Dockerfile - Create a Dockerimage from your miniserver with the tag v1. Which command do you use for this?
 `docker build -t migbin2s/miniserver:v1 .`
 
