@@ -224,7 +224,7 @@ proxy ens18 {
 `systemctl restart ndppd`
 
 # Task 6 - Services with public IPv6 address
-## my_ipv6 You have the following three global IPv6 addresses in your IPv6 subnet  :
+## You have the following three global IPv6 addresses in your IPv6 subnet my_ipv6  :
 * ipv6_1: 2001:638:408:200:ff6c:cafe::1111/96
 * ipv6_2: 2001:638:408:200:ff6c:cafe::2222/96
 * ipv6_3: 2001:638:408:200:ff6c:cafe::3333/96
@@ -232,7 +232,7 @@ proxy ens18 {
 ## (6a) Deploy docker run your web application miniwhoami to your lab server as a container with global IP address ipv6_1 serv-ws22. Which command do you use for this?
  `docker run --restart always -d --network my_ipv6 --ip6=2001:638:408:200:ff6c:cafe::1111 --name=miniwhoami1 docker.fslab.de/migbin2s/servmgmt-ws22/miniwhoami`
 
- ## (6b) miniwhoami Deploy two more instances of your web application with global IP addresses ipv6_2 and ipv6_3 to your lab server using a docker-compose file serv-ws22. Enter your compose file.
+ ## (6b)  Deploy two more instances of your web application miniwhoami with global IP addresses ipv6_2 and ipv6_3 to your lab server using a docker-compose file serv-ws22. Enter your compose file.
 
  ```
 services:
@@ -260,7 +260,7 @@ networks:
 ```
 `docker compose -f docker-compose_2.yml up -d`
 
-## (6c) You now have three services miniwhoami1, miniwhoami2 and miniwhoami3deployed, each of which can be reached via its own IPv6 address. Configure your domain url.my in Cloudflare so that your services are reachable via miniwhoami1.yourDomain.xy, ,  miniwhoami2.yourDomain.xyand  miniwhoami3.yourDomain.xy.
+## (6c) You now have three services miniwhoami1, miniwhoami2 and miniwhoami3 deployed, each of which can be reached via its own IPv6 address. Configure your domain in Cloudflare so that your services are reachable via miniwhoami1.yourDomain.xy, ,  miniwhoami2.yourDomain.xy and  miniwhoami3.yourDomain.xy.
 
 * My Solution:
   
