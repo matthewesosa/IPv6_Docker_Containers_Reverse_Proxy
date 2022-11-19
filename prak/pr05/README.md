@@ -109,7 +109,7 @@ In general, top 10 security vulnerabilities as defined by the Open Web Security 
 # Task 3 - reverse proxy
 ## (3a) Create a Docker compose file that  starts two miniwhoami services miniwhoami-loc1 and miniwhoami-loc2 on the network loc_ipv6. Now set up your web server as a reverse proxy for these two miniwhoami services. Identify the configuration file you are using /etc/nginx/nginx.conf and explain this file in detail.
 ```
-# ------------------- NOTE: see the complete file in nginx.conf
+# ------------------- NOTE: please see the complete configuration in the file prak/pr05/nginx.conf
 
 server{
 #  listening on port 80 and 443 for all IPv4 and IPv6 address
