@@ -124,7 +124,7 @@ server{
 
     server_name miniwhoami-loc1.migbin2s-servemgmt.site;
 
-# traffic for the '/' location is sent with the proxy_pass directive to the http resource defined (i.e miniwhoami-loc in this case) 
+# traffic for the '/' location is sent with the proxy_pass directive to the http resource defined (i.e http://miniwhoami-loc1 in this case) 
     location / {
         proxy_pass http://miniwhoami-loc1;
     }
