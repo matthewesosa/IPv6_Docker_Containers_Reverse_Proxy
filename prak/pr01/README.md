@@ -1,9 +1,12 @@
+# Internship Sheet 1 - Home Laboratory
+
 # TASK 2 - VM with IPv6
 
-* sudo nano /etc/netplan/00-installer-config.yaml
-
+ `sudo nano /etc/netplan/00-installer-config.yaml`
+  
+```
  This is the network config written by 'subiquity'
-    
+
     network:
       ethernets:
         ens18:
@@ -16,7 +19,9 @@
       version: 2
       renderer: networkd
 
-* sudo netplan apply
+```
+
+`sudo netplan apply`
 
 
 ## Explanation:
@@ -30,18 +35,20 @@
 
 # TASK 3 - VM with SSH
 ## (3c) Test ssh access via public key authentication. How did you do that?
-* ssh migbin2s@2001:638:408:200:FF6C::1
+`ssh migbin2s@2001:638:408:200:FF6C::1`
   
 ## (3d) Turn off password authentication for openssh. Which line or lines did you have to change for this?
-* sudo nano /etc/ssh/sshd_config
- 
+`sudo nano /etc/ssh/sshd_config`
+
+```
 -PasswordAuthentication no
 
 -UsePAM no
 
 -KbdInteractiveAuthentication no
 
-* sudo systemctl restart ssh
+```
+`sudo systemctl restart ssh`
 
 
 ## (3d) Test that password authentication is actually turned off. What error message do you get when you try to log in with a password?
