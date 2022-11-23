@@ -44,4 +44,11 @@ here  a server's weight is determined by its response time. The next request
 #
 
 ## (1b.ii) What is session persistence? What types of session persistence are there?
+* Session persistence is a process where requests from a single user are always forwarded by a loadbalancer to the same server on which they first originated. This method is made possible with the help of generated session ID passed along as cookies, and it is known as "sticky sessions" in some load balancing products and services.
+#  
+* ## Types of session persistence
+* ### Duration-based session persistence:
+a cookie that specifies a certain duration for session stickiness is sent by your load balancer. The load balancer determines whether this cookie is present each time a client request comes in. The session is no longer sticky after the allotted time has passed and the cookie expires.
 
+* ### Application-controlled session persistence:
+The length of the session's stickiness is determined by a cookie created by the application. Although the load balancer continues to issue its own session cookie on top of it, it now adheres to the application cookie's lifetime. By guaranteeing that users are never forwarded to a server after their local session cookie has already expired, this improves the efficiency of sticky sessions. However, because it necessitates more integration between the load balancer and the application, its implementation is more difficult.
