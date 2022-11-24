@@ -1,4 +1,4 @@
-Internship Sheet 1 - Home Laboratory
+# Internship Sheet 1 - Home Laboratory
 Our home laboratory consists of the following components:
 
 Linux desktop system
@@ -39,7 +39,7 @@ Please solve the following practical exercises and record your solution, where i
 
  
 
-Task 1 - Installing Ubuntu 22.04 on the VM
+# Task 1 - Installing Ubuntu 22.04 on the VM
 You have received a virtual machine and an IPv6 address for your VM and an IPv6 address space from the network laboratory ( https://netlab.inf.hochschule-bonn-rhein-sieg.de/ ).
 
 a)Install Ubuntu 22.04 on your virtual machine. To do this, use the iso ubuntu-22.04.1-live-server-amd64.isoprovided on the Proxmox server.
@@ -49,7 +49,7 @@ d)Activate the installation of the OpenSSH server package (openssh-server packag
 e)After the restart, remove the iso from the CD/DVD drive.
  
 
-Task 2 - VM with IPv6
+# Task 2 - VM with IPv6
 a)Configure the IPv6 interface of your VM via the Proxmox console or via the university VPN  with Netplan. You can find your IPv6 address in LEA under the following link . Configure as IPv6 router:
  gateway6: "2001:638:408:200::1" .
 b)Specify the content of your configuration file /etc/netplan/00-installer-config.yamland interpret it?
@@ -57,7 +57,7 @@ c)Test (after setting up ssh, see Task 3) whether you can access your machine re
 d)You can use the taskchecker (LEA: https://lea.hochschule-bonn-rhein-sieg.de/goto.php?target=webr_1305668&client_id=db_040811 ) to check that your VM can be reached from outside via IPv6 .
  
 
-Task 3 - VM with ssh
+# Task 3 - VM with ssh
 a)Create an RSA key pair with openssh and the command . ssh-keygen(Modern alternative: ed25519 key pair.)
 b)Bring the public key for the user migbin2s  into the file ~/.ssh/authorized_keys. on your server serv-ws22 
 c)Test ssh access via public key authentication. How did you do that?
@@ -65,6 +65,6 @@ d)Turn off password authentication for openssh . You have /etc/ssh/sshd_configto
 e)Test that password authentication is actually turned off. What error message do you get when you try to log in with a password?
  
 
-Task 4 - domain
+# Task 4 - domain
 a)Set up your domain to point to your server.
 b)Test access to your server via the domain using the ping command.

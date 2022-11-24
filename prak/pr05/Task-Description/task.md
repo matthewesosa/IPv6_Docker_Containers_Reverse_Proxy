@@ -1,8 +1,8 @@
 Internship Sheet 5 - Reverse Proxy
 A notice:
 In the following tasks, you create services on your server serv-ws22that can be reached from
- the outside via a precisely defined IPv6 address from your IPv6 subnet. Please keep these s
- ervices running on your server at all times .
+ the outside via a precisely defined IPv6 address from your IPv6 subnet. Please keep these 
+ services running on your server at all times .
 
 You can use the taskchecker (LEA: https://lea.hochschule-bonn-rhein-sieg.de/goto.php?target=webr_1305668&client_id=db_040811 ) to check that your services are actually running .
 
