@@ -1,4 +1,4 @@
-Internship Sheet 6 - Loadbalancer Scenario
+# Internship Sheet 6 - Loadbalancer Scenario
 A notice:
 In the following tasks, you create services on your server serv-ws22that can be reached from the outside via a precisely defined IPv6 address from your IPv6 subnet. Please keep these services running on your server at all times .
 
@@ -8,10 +8,10 @@ The ongoing services are part of the pre- examination service (H-BRS) or the ULP
 
  
 
-Task 1
-Now let's build a load balancer scenario with an nginx based load balancer and three different miniwhoami services miniwhoami-s1, and  . The load balancer should be accessible from the outside via the IP address and the URL or the URL , the miniwhoami services should run in the local IPv6 network. miniwhoami-s2 miniwhoami-s3 2001:638:408:200:ff??:cafe::9999/96http://loadbalancer.yourDomain.xyhttp://lb.yourDomain.xyloc_ipv6
+# Task 1
+Now let's build a load balancer scenario with an nginx based load balancer and three different miniwhoami services miniwhoami-s1, iniwhoami-s2 and miniwhoami-s3. The load balancer should be accessible from the outside via the IP address and the URL http://loadbalancer.yourDomain.xy or the URL http://lb.yourDomain.xy .The miniwhoami services should run in the local IPv6 network loc_ipv6 2001:638:408:200:ff??:cafe::9999/96
 
-a. Create a compose file with the three miniwhoami services miniwhoami-s1, and  . Test the miniwhoami services on the local IPv6 network using curl. miniwhoami-s2 miniwhoami-s3loc_ipv6
+a. Create a compose file with the three miniwhoami services miniwhoami-s1, miniwhoami-s2 and miniwhoami-s3 . Test the miniwhoami services on the local IPv6 network loc_ipv6 using curl.
 
 b. For an introduction to load balancing with NGINX, read the NGINX documentation chapters: HTTP Load Balancing .
 - What HTTP load balancing methods are there? How do these work?
