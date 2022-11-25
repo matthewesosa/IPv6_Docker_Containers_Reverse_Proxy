@@ -165,7 +165,7 @@ server{
 ## 4c.) How do you rate the security of your web server www2.yourDomain.xy?
 * I used a Cloudflare origin CA certificate to enable full end-to-end encryption.Though HTTPS guarantees that communication is private and encrypted, the trustworthiness of the CA should also be put into consideration. Specific level of trust even for a CA is still relative hence there could still be various risk if for example there is an internal compromise in the CA.
 
-## Analyze the TLS security of the access for your https web server  www2.yourDomain.xy with a suitable analysis tool.
+## 4d,) Analyze the TLS security of the access for your https web server  www2.yourDomain.xy with a suitable analysis tool.
 ## Questions:
 ## Which tool did you use?
 ## What result did you get? What TLS versions are supported? Which TLS versions are not supported?
