@@ -9,6 +9,7 @@
 `sudo install minikube-linux-amd64 /usr/local/bin/minikube`
 
 * Starting Minikube and Testing Installation
+  
 After installing Minikube we need to start and test the cluster to make sure everything is working correctly.
 (i) Add your user to the docker group
 If this step was already performed when Docker was installed, it can be skipped:
