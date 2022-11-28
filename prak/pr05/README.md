@@ -86,9 +86,9 @@ http {
 
 My solution:
 
-[http://www.migbin2s-servemgmt.site](https://www.migbin2s-servemgmt.site/)
+http://www.migbin2s-servemgmt.site
 
-[http://[2001:638:408:200:ff6c:cafe:0:7777]](http://[2001:638:408:200:ff6c:cafe:0:7777]/)
+http://[2001:638:408:200:ff6c:cafe:0:7777]
 
 # Task 2 - HTTPS server
 ## (2a) Activate the CDN proxy functions for your server with the URL www.yourDomain.xy so that your server can be reached with http. Which IPv6 address is now used to reach your server from outside via www.yourDomain.xy?
@@ -113,9 +113,9 @@ In general, top 10 security vulnerabilities as defined by the Open Web Security 
 
 My solution:
 
-[http://www.migbin2s-servemgmt.site](http://www.migbin2s-servemgmt.site/) (access with http via CDN proxy function)
+http://www.migbin2s-servemgmt.site (access with http via CDN proxy function)
 
-[https://www.migbin2s-servemgmt.site](https://www.migbin2s-servemgmt.site/) (access with https via CDN proxy function)
+https://www.migbin2s-servemgmt.site (access with https via CDN proxy function)
 
 
 # Task 3 - reverse proxy
@@ -175,8 +175,13 @@ server{
 
 My solution :
 
-[http://miniwhoami-loc1.migbin2s-servemgmt.site](http://miniwhoami-loc1.migbin2s-servemgmt.site/) ,  [http://miniwhoami-loc2.migbin2s-servemgmt.site](http://miniwhoami-loc2.migbin2s-servemgmt.site/)
-[http://echo.migbin2s-servemgmt.site](http://echo.migbin2s-servemgmt.site/) ,  [https://echo.migbin2s-servemgmt.site](https://echo.migbin2s-servemgmt.site]/)
+http://miniwhoami-loc1.migbin2s-servemgmt.site
+
+http://miniwhoami-loc2.migbin2s-servemgmt.site
+
+http://echo.migbin2s-servemgmt.site
+
+https://echo.migbin2s-servemgmt.site
 
 
 # Task 4 - HTTPS redirection
@@ -197,5 +202,5 @@ My solution :
 
 My solution for part b) of the task:
 
-[http://www2.migbin2s-servemgmt.site](http://www2.migbin2s-servemgmt.site/)
+http://www2.migbin2s-servemgmt.site
 

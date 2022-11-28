@@ -57,6 +57,6 @@ The length of the session's stickiness is determined by a cookie created by theÂ
 
 My solution:
 
-[http://[2001:638:408:200:ff6c:cafe:0:9999]](http://[2001:638:408:200:ff6c:cafe:0:9999]/)
+http://[2001:638:408:200:ff6c:cafe:0:9999]
 
-[http://loadbalancer.migbin2s-servemgmt.site](http://loadbalancer.migbin2s-servemgmt.site/)
+http://loadbalancer.migbin2s-servemgmt.site

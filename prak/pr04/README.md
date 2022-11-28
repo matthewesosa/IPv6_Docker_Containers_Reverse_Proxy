@@ -26,9 +26,11 @@ Find the docker-compose file in the folder pr04
 #
 My solution:
 
-[http://[2001:638:408:200:ff6c::1]:20411](http://[2001:638:408:200:ff6c::1]:20411]/)
-[http://[2001:638:408:200:ff6c::1]:20412](http://[2001:638:408:200:ff6c::1]:20412]/)
-[http://[2001:638:408:200:ff6c::1]:20413](http://[2001:638:408:200:ff6c::1]:20413]/)
+http://[2001:638:408:200:ff6c::1]:20411
+
+http://[2001:638:408:200:ff6c::1]:20412
+
+http://[2001:638:408:200:ff6c::1]:20413
 
 
 # Task 2 - Investigation of network structures
@@ -272,11 +274,11 @@ networks:
 
 * My Solution:
   
-[http://[2001:638:408:200:ff6c:cafe::1111]](http://[2001:638:408:200:ff6c:cafe:0:1111]/)  ,   http://miniwhoami1.migbin2s-servemgmt.site
+http://[2001:638:408:200:ff6c:cafe::1111] ,   http://miniwhoami1.migbin2s-servemgmt.site
 
-[http://[2001:638:408:200:ff6c:cafe::2222]](http://[2001:638:408:200:ff6c:cafe::2222]/)  ,   http://miniwhoami2.migbin2s-servemgmt.site
+http://[2001:638:408:200:ff6c:cafe::2222] ,   http://miniwhoami2.migbin2s-servemgmt.site
 
-[http://[2001:638:408:200:ff6c:cafe::3333]](http://[2001:638:408:200:ff6c:cafe::3333]/)  ,   http://miniwhoami3.migbin2s-servemgmt.site
+http://[2001:638:408:200:ff6c:cafe::3333],   http://miniwhoami3.migbin2s-servemgmt.site
 
 ## (6d) Ping my service miniwhoami1 using the url miniwhoami1.servmgmt.de. What did you notice? How do you interpret the result?
 As seen below the ICMP echo reply is not coming from your configured IP address `2001:638:408:200:ff00:cafe::1111` . It is coming from `2a06:98c1:3120:::` which is a Cloudflare IP address due to Cloudflare proxying. The ping did not go through the proxy because Ping uses the ICMP protocol to communicate, but Proxy only supports TCP and UDP packets.
