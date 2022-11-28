@@ -167,7 +167,7 @@ NDP proxy has to be enabled such that the Docker host can listen to neighbour so
 # Task 4 - Docker IPv6 NDP
 
 ## (4a) Manual configuration of the NDP function: 
-   # First switch sysctl net.ipv6.conf.ens??.proxy_ndp=1on the NDP proxy function for the correct interface. Use to configure ip -6 neigh add ...  the IPv6 address to which the NDP proxy function should apply. What is the command in detail in your case? Test the NDP functionality by pinging the container's IPv6 address from the outside miniwhoami_20421(see task 5b).
+   # First switch sysctl net.ipv6.conf.ens??.proxy_ndp=1 on the NDP proxy function for the correct interface. Use to configure ip -6 neigh add ...  the IPv6 address to which the NDP proxy function should apply. What is the command in detail in your case? Test the NDP functionality by pinging the  IPv6 address of the container miniwhoami_20421 from the outside  (see task 5b).
 
 `sysctl net.ipv6.conf.ens18.proxy_ndp=1`
 
