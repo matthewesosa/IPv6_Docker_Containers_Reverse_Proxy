@@ -49,7 +49,7 @@ a.Go docker exec into the container with miniwhoami_1.
 What command do you use to do this?
 Which of the following commands can you execute in the container: ping, ip a, curl, dig, nslookup ?
 
-b.Now go inside the container miniwhoami_1 using the excellent Netzerk docker tool nicolaka/netshoot .
+b.Now go inside the container miniwhoami_1 using the excellent Netzerk docker tool [nicolaka/netshoot](https://github.com/nicolaka).
 What command do you use to do this?
 Which of the following commands can you execute in the container: ping, ip a, curl, dig, nslookup ?
 

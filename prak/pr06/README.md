@@ -52,3 +52,11 @@ a cookie that specifies a certain duration for session stickiness is sent by you
 
 * ### Application-controlled session persistence:
 The length of the session's stickiness is determined by a cookie created by the application. Although the load balancer continues to issue its own session cookie on top of it, it now adheres to the application cookie's lifetime. By guaranteeing that users are never forwarded to a server after their local session cookie has already expired, this improves the efficiency of sticky sessions. However, because it necessitates more integration between the load balancer and the application, its implementation is more difficult.
+
+#
+
+My solution:
+
+[http://[2001:638:408:200:ff6c:cafe:0:9999]](http://[2001:638:408:200:ff6c:cafe:0:9999]/)
+
+[http://loadbalancer.migbin2s-servemgmt.site](http://loadbalancer.migbin2s-servemgmt.site/)

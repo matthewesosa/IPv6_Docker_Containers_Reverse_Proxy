@@ -84,6 +84,12 @@ http {
 
 ## (1d) Start and test your server.
 
+My solution:
+
+[http://www.migbin2s-servemgmt.site](https://www.migbin2s-servemgmt.site/)
+
+[http://[2001:638:408:200:ff6c:cafe:0:7777]](http://[2001:638:408:200:ff6c:cafe:0:7777]/)
+
 # Task 2 - HTTPS server
 ## (2a) Activate the CDN proxy functions for your server with the URL www.yourDomain.xy so that your server can be reached with http. Which IPv6 address is now used to reach your server from outside via www.yourDomain.xy?
 Cloudflares' IPv6 address due to the proxy.
@@ -104,6 +110,12 @@ In general, top 10 security vulnerabilities as defined by the Open Web Security 
 * Failure to restrict URL Access
 * Insufficient Transport Layer Protection
 * Unvalidated Redirects and Forwards
+
+My solution:
+
+[http://www.migbin2s-servemgmt.site](http://www.migbin2s-servemgmt.site/) (access with http via CDN proxy function)
+
+[https://www.migbin2s-servemgmt.site](https://www.migbin2s-servemgmt.site/) (access with https via CDN proxy function)
 
 
 # Task 3 - reverse proxy
@@ -161,6 +173,12 @@ server{
 
 `docker run --restart unless-stopped -d --network loc_ipv6 --name=echo ealen/echo-server`
 
+My solution :
+
+[http://miniwhoami-loc1.migbin2s-servemgmt.site](http://miniwhoami-loc1.migbin2s-servemgmt.site/) ,  [http://miniwhoami-loc2.migbin2s-servemgmt.site](http://miniwhoami-loc2.migbin2s-servemgmt.site/)
+[http://echo.migbin2s-servemgmt.site](http://echo.migbin2s-servemgmt.site/) ,  [https://echo.migbin2s-servemgmt.site](https://echo.migbin2s-servemgmt.site]/)
+
+
 # Task 4 - HTTPS redirection
 ## 4c.) How do you rate the security of your web server www2.yourDomain.xy?
 * I used a Cloudflare origin CA certificate to enable full end-to-end encryption.Though HTTPS guarantees that communication is private and encrypted, the trustworthiness of the CA should also be put into consideration. Specific level of trust even for a CA is still relative hence there could still be various risk if for example there is an internal compromise in the CA.
@@ -174,4 +192,10 @@ server{
 * The result I obtained is shown below. 
 #
 ![](images/ssl-test.png)
+
+#
+
+My solution for part b) of the task:
+
+[http://www2.migbin2s-servemgmt.site](http://www2.migbin2s-servemgmt.site/)
 

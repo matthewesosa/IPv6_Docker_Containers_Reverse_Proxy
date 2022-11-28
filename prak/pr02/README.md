@@ -121,7 +121,7 @@ Explanation of the Dockerfile:
 * ping
 * nslookup
 
-## (4b.i) Now go inside the container using the excellent Netzerk docker tool nicolaka/netshoot miniwhoami_1. What command do you use to do this?
+## (4b.i) Now go inside the container miniwhoami_1 using the excellent Netzerk docker tool [nicolaka/netshoot](https://github.com/nicolaka). What command do you use to do this?
 `docker run -it --net container:miniwhoami_1 nicolaka/netshoot`
 
 ## (4b.ii) Which of the following commands can you execute in the container: ping, ip a, curl, dig, nslookup ?

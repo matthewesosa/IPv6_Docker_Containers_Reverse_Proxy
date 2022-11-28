@@ -135,11 +135,14 @@ Events:              <none>
 
 ```
 
-## (2d. i) Just for testing, start a pod miniwhoami on your minikube. Enter the command you used.
+## (2d.i) Just for testing, start a pod miniwhoami on your minikube. Enter the command you used.
 
 `kubectl run miniwhoami --image=docker.fslab.de/migbin2s/servmgmt-ws22/miniwhoami`
 
-## (2d. iv) Delete the pod. What command did you use to do this?
+## 2d.iii) Retrieve information about the pod using the kubectl describe pods miniwhoami command. Briefly, describe the information obtained.
+* The information displayed when the command `kubectl describe pods miniwhoami` is used includes the pod name, IP, start time, status e.t.c
+
+## (2d.iv) Delete the pod. What command did you use to do this?
 
 `kubectl delete pod miniwhoami`
 

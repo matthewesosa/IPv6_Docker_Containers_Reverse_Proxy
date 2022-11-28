@@ -2,7 +2,7 @@
 A notice:
 In the following tasks, you create services on your server serv-ws22that can be reached from the outside via a precisely defined IPv6 address from your IPv6 subnet. Please keep these services running on your server at all times .
 
-You can use the taskchecker (LEA: https://lea.hochschule-bonn-rhein-sieg.de/goto.php?target=webr_1214931&client_id=db_040811 ) to check that your services are actually running .
+You can use the taskchecker [(LEA: https://lea.hochschule-bonn-rhein-sieg.de/goto.php?target=webr_1214931&client_id=db_040811)](http://[2001:638:408:200:ff00:cafe:0:beaf]:8080/) to check that your services are actually running .
 
 The ongoing services are part of the pre- examination service (H-BRS) or the ULP (TH-Cologne).
 
