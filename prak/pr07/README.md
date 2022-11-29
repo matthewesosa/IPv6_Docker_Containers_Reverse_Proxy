@@ -2,6 +2,10 @@
 
 # Task 1 - Installing Minikube
 ## 1a.) Install the latest version of Minikube (at least v1.25.2) and the Kubernetes CLI (at least v1.23.6) on your workstation. Briefly describe your installation steps.
+
+* Minikube Setup on Linux: these instructions should is valid for Debian, Ubuntu, or Mint Linux distributions.
+#
+
 * Install Minikube:
 
 `curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64`
