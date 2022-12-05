@@ -12,7 +12,7 @@
 ### (1c.ii) What command did you use for this?
 `kubectl get po miniwhoami-manual -o yaml`
 ### (1c.iii) What is the difference compared to the command kubectl describe ... .
-The command to outputs the pod's yaml descriptor gives a more detailed information includeding the content of the yaml file used for creating the pod. Whlie the 'kbectl describe' command only gives out important information about the pod.
+The command to outputs the pod's yaml descriptor gives a more detailed information includeding the content of the yaml file used for creating the pod. Whlie the 'kubectl describe' command only gives out important information about the pod.
 ### (1d) Can you access your pod with curl localhost:8080 (or other port)? If no, why not?
 No. I cannot access it because the pod is not running in my local machnine, it is running within the minikube virtual machine that was created in my local machine when I installed minikube.
 ### (1e) Provide a method to access your pod and try it. Which commands did you use for this?
@@ -165,7 +165,7 @@ miniwhoami-rc-xjl9c   1/1     Running       0          9m10s   app=miniwhoami
 miniwhoami-rc-zw5n9   1/1     Running       0          11m     app=miniwhoami
 ```
 
-* Before I deleted the pod, the additional label `app2: new` to the pod template did not trigger any change from the Replication controller because according to the defined selector  `app=miniwhoami`, the desired state of three (3) pods with labels `app=miniwhoami` had already been fulfilled. 
+* Before I deleted the pod, the additional label `app2: new` to the pod template did not trigger any change from the Replication controller because according to the defined selector  `app=miniwhoami`, the desired state of three (3) pods with labels `app=miniwhoami` is already fulfilled. 
 
 * But deleting the pod means the ReplicationController sees inadequate number of pods. Hence, as the deleted pod  `miniwhoami-rc-x8bdr` is terminating the replication controller starts a new pod `miniwhoami-rc-hw69f`  using the edited pod template. Hence, the new pod has both labels `app2=new` and `app=miniwhoami`.
 
