@@ -167,14 +167,14 @@ NDP proxy has to be enabled such that the Docker host can listen to neighbour so
 ## Task 4 - Docker IPv6 NDP
 
 ### (4a) Manual configuration of the NDP function: 
-   # First switch sysctl net.ipv6.conf.ens??.proxy_ndp=1 on the NDP proxy function for the correct interface. Use to configure ip -6 neigh add ...  the IPv6 address to which the NDP proxy function should apply. What is the command in detail in your case? Test the NDP functionality by pinging the  IPv6 address of the container miniwhoami_20421 from the outside  (see task 5b).
+### First switch sysctl net.ipv6.conf.ens??.proxy_ndp=1 on the NDP proxy function for the correct interface. Use to configure ip -6 neigh add ...  the IPv6 address to which the NDP proxy function should apply. What is the command in detail in your case? Test the NDP functionality by pinging the  IPv6 address of the container miniwhoami_20421 from the outside  (see task 5b).
 
 `sysctl net.ipv6.conf.ens18.proxy_ndp=1`
 
 `ip -6 neigh add proxy 2001:638:408:200:ff6d:242:ac11:2 dev ens18`
 
 ### (4b) Installing an NDP Proxy: 
-## The NDP Proxy Daemon ndppd(see `GIT`) is also provided via the Ubuntu repo. install with `apt install ndppd`. You have a template for the required configuration `/etc/ndppd.conf` file in the file `/usr/share/doc/ndppd/ndppd.conf-dist`. rule 1111::You only have to customize the interface and the rules ( ). Specifically, you need to 1111:: replace with your subnet (more precisely: replace with the subnet for which you want the NDP function). If you want to NDP more than one subnet, specify multiple rules. The autostart of ndppd was already activated for me; otherwise activate it via systemctl. Identify the configuration file you are using ndppd.conf and explain the most important elements of it.
+### The NDP Proxy Daemon ndppd(see `GIT`) is also provided via the Ubuntu repo. install with `apt install ndppd`. You have a template for the required configuration `/etc/ndppd.conf` file in the file `/usr/share/doc/ndppd/ndppd.conf-dist`. rule 1111::You only have to customize the interface and the rules ( ). Specifically, you need to 1111:: replace with your subnet (more precisely: replace with the subnet for which you want the NDP function). If you want to NDP more than one subnet, specify multiple rules. The autostart of ndppd was already activated for me; otherwise activate it via systemctl. Identify the configuration file you are using ndppd.conf and explain the most important elements of it.
 
 ````
 route-ttl 30000
