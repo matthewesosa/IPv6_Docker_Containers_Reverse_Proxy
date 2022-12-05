@@ -242,7 +242,7 @@ proxy ens18 {
 ### (6a) Deploy docker run your web application miniwhoami to your lab server as a container with global IP address ipv6_1 serv-ws22. Which command do you use for this?
  `docker run --restart always -d --network my_ipv6 --ip6=2001:638:408:200:ff6c:cafe::1111 --name=miniwhoami1 docker.fslab.de/migbin2s/servmgmt-ws22/miniwhoami`
 
-### (6b)  Deploy two more instances of your web application miniwhoami with global IP addresses ipv6_2 and ipv6_3 to your lab server using a docker-compose file serv-ws22. Enter your compose file.
+### (6b)  Deploy two more instances of your web application miniwhoami with global IP addresses ipv6_2 and ipv6_3 to your lab server serv-ws22 using a docker-compose file . Enter your compose file.
 
  ```
 services:
