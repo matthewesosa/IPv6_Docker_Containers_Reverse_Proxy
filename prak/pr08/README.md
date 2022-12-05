@@ -130,7 +130,7 @@ miniwhoami-rc-x8bdr   1/1     Running       0          2m15s
 miniwhoami-rc-xjl9c   1/1     Running       0          14s
 miniwhoami-rc-zw5n9   1/1     Running       0          2m15s
 ```
-* The replication controller starts a new pod as the pod `miniwhoami-rc-tqvcn` gets deleted. When the ReplicationController receives a notification of a pod being deleted, the controller is prompted to inspect the actual number of pods and take the necessary steps to return to the desired state of three (3) pods.
+* The replication controller creats a new pod as the pod `miniwhoami-rc-tqvcn` gets deleted. When the ReplicationController receives a notification of a pod being deleted, the controller is prompted to inspect the actual number of pods and take the necessary steps to return to the desired state of three (3) pods.
 
 ### (5c) Output and interpret the description of the replication controller.
 `kubectl describe rc miniwhoami-rc`
@@ -167,7 +167,7 @@ miniwhoami-rc-zw5n9   1/1     Running       0          11m     app=miniwhoami
 
 * Before I deleted the pod, the additional label `app2: new` to the pod template did not trigger any change from the Replication controller because according to the defined selector  `app=miniwhoami`, the desired state of three (3) pods with labels `app=miniwhoami` is already fulfilled. 
 
-* But deleting the pod means the ReplicationController sees inadequate number of pods. Hence, as the deleted pod  `miniwhoami-rc-x8bdr` is terminating the replication controller starts a new pod `miniwhoami-rc-hw69f`  using the edited pod template. Hence, the new pod has both labels `app2=new` and `app=miniwhoami`.
+* But deleting the pod means the ReplicationController sees inadequate number of pods. Hence, as the deleted pod  `miniwhoami-rc-x8bdr` is terminating the replication controller creates a new pod `miniwhoami-rc-hw69f`  using the edited pod template. Hence, the new pod has both labels `app2=new` and `app=miniwhoami`.
 
 ### (5f) Edit your pod manifest by replacing the previous selector `app: miniwhoami` with the selector `app2: new` at the replication controller. Observe and describe what happens during this process.
 ```
@@ -180,7 +180,7 @@ miniwhoami-rc-zw5n9   1/1     Running   0          21m   app=miniwhoami
 
 ```
 
-* The ReplicationController started two new pods `miniwhoami-rc-l92j5` and `miniwhoami-rc-rkbwf` . This is in response to the new selector `app2: new` ; the controller is ensuring that the new desired state of three (3) pods with the labels `app2=new` and `app=miniwhoami` is fulfilled.
+* The ReplicationController created two new pods `miniwhoami-rc-l92j5` and `miniwhoami-rc-rkbwf` . This is in response to the new selector `app2: new` ; the controller is ensuring that the new desired state of three (3) pods with the labels `app2=new` and `app=miniwhoami` is fulfilled.
 
 * The two pods `miniwhoami-rc-xjl9c ` and `miniwhoami-rc-zw5n9 ` that were initially created with the old pod template having only the label `app=miniwhoami` have been moved out of the scope of the ReplicationController.
 
