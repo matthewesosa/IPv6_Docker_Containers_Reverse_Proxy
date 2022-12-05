@@ -199,7 +199,7 @@ miniwhoami-rc-skvbl   1/1     Running   0          27m     app=miniwhoami
 miniwhoami-rs-q8926   1/1     Running   0          2m34s   app=miniwhoami
 miniwhoami-rs-t82sq   1/1     Running   0          2m34s   app=miniwhoami
 ```
-* Though the desired state is five(5) pods, only the two pods `miniwhoami-rs-q8926` and `miniwhoami-rs-t82sq` were created by the ReplicaSet. The previously running three(3) pods were added to the scope of the ReplicaSet because they meets the Label - Selector requirement defined in the ReplicaSet. 
+* Though the desired state is five(5) pods, only the two pods `miniwhoami-rs-q8926` and `miniwhoami-rs-t82sq` were created by the ReplicaSet. The previously running three(3) pods were added to the scope of the ReplicaSet because they meet the Label - Selector requirement defined in the ReplicaSet. 
 
 ### (6f) As an experimental conclusion, start the old replication controller miniwhoami-rc.yaml from the previous task, 3 miniwhoami Pods again. What is happening? How do you interpret your observations?
 * The ReplicationController created three(3) new pods even when pods with the same label `àpp:miniwhoami` in the scope of the ReplicaSet were already running.
