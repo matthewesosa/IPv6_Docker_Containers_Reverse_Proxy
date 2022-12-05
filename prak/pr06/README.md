@@ -3,6 +3,8 @@
 ## Now we want to build a load balancer scenario with an nginx based load balancer and three different miniwhoami services miniwhoami-s1, miniwhoami-s2 and miniwhoami-s3. The load balancer should be reachable from outside via the IP address 2001:638:408:200:ff??:cafe::9999/96 and the URL http://loadbalancer.yourDomain.xy or the URL http://lb.yourDomain.xy, the miniwhoami services should run in the local IPv6 network loc_ipv6.
 
 ## (1b.i) What HTTP load balancing methods are there? How do these work?
+[Reference source](https://kemptechnologies.com/load-balancer/load-balancing-algorithms-techniques)
+#
 * ### Round Robin : 
 application servers receive client requests in a straightforward rotation. The first client request is sent to the first application server in the list, the second client request is sent to the second application server, the third client request is delivered to the third application server, the fourth client request is sent to the first application server, and so on.
 #
