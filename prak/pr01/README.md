@@ -1,6 +1,6 @@
 # Internship Sheet 1 - Home Laboratory
 
-# TASK 2 - VM with IPv6
+## TASK 2 - VM with IPv6
 
  `sudo nano /etc/netplan/00-installer-config.yaml`
   
@@ -24,7 +24,7 @@
 `sudo netplan apply`
 
 
-## Explanation:
+### Explanation:
 
 -'dhcp6:false' - For the network interface ens18, IPv6 is assigned manually hence dhcp6 is set to false.
 
@@ -33,11 +33,11 @@
 -'renderer:networkd' - The network configuration abstraction renderer. 'Networkd' can manage both static and dynamic connections.
 
 
-# TASK 3 - VM with SSH
-## (3c) Test ssh access via public key authentication. How did you do that?
+## TASK 3 - VM with SSH
+### (3c) Test ssh access via public key authentication. How did you do that?
 `ssh migbin2s@2001:638:408:200:FF6C::1`
   
-## (3d) Turn off password authentication for openssh. Which line or lines did you have to change for this?
+### (3d) Turn off password authentication for openssh. Which line or lines did you have to change for this?
 `sudo nano /etc/ssh/sshd_config`
 
 ```
@@ -51,5 +51,5 @@
 `sudo systemctl restart ssh`
 
 
-## (3d) Test that password authentication is actually turned off. What error message do you get when you try to log in with a password?
+### (3d) Test that password authentication is actually turned off. What error message do you get when you try to log in with a password?
 --Permission denied (publickey).
