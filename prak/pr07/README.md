@@ -1,7 +1,7 @@
 # Internship Sheet 7 - Minikube
 
-# Task 1 - Installing Minikube
-## 1a.) Install the latest version of Minikube (at least v1.25.2) and the Kubernetes CLI (at least v1.23.6) on your workstation. Briefly describe your installation steps.
+## Task 1 - Installing Minikube
+### (1a.) Install the latest version of Minikube (at least v1.25.2) and the Kubernetes CLI (at least v1.23.6) on your workstation. Briefly describe your installation steps.
 
 * Minikube Setup on Linux: these instructions are valid for Debian, Ubuntu, or Mint Linux distributions.
 #
@@ -39,18 +39,18 @@ After you see a 'Done' message in your terminal, run `minikube status` to make s
 Lastly, open up your terminal and make sure that you can run `kubectl version`
 
 
-## 1d.) To test, launch the web-based Kubernetes dashboard. What command do you use to do this?
+### (1d.) To test, launch the web-based Kubernetes dashboard. What command do you use to do this?
   `minikube start`
   `minikube dashboard`
 
-## 1e.) Describe the system architecture of the Minikube environment you installed.
+### (1e.) Describe the system architecture of the Minikube environment you installed.
 It is a single node cluster contained in a virtual machine (VM). This cluster allows the demo Kubernetes operations without requiring the time and resource-consuming installation of full-blown K8s.
 
-# Task 2 - Set up and test Minikube
+## Task 2 - Set up and test Minikube
 
-## In this and the following tasks related to the Kubernetes in Action literature base, instead of using the kubia container, please use your miniwhoami container that you uploaded to your registry on your Gitlab account. If this is not available to you or if you do not succeed in accessing it, you can also use the container jennerwein/miniwhoami as a substitute.
+### In this and the following tasks related to the Kubernetes in Action literature base, instead of using the kubia container, please use your miniwhoami container that you uploaded to your registry on your Gitlab account. If this is not available to you or if you do not succeed in accessing it, you can also use the container jennerwein/miniwhoami as a substitute.
 #
-## (2c) Get more information about your node minikube using the command kubectl describe nodes minikube. What information does the command give you?
+### (2c) Get more information about your node minikube using the command kubectl describe nodes minikube. What information does the command give you?
 `kubectl describe nodes minikube`
 
 ```
@@ -139,14 +139,14 @@ Events:              <none>
 
 ```
 
-## (2d.i) Just for testing, start a pod miniwhoami on your minikube. Enter the command you used.
+### (2d.i) Just for testing, start a pod miniwhoami on your minikube. Enter the command you used.
 
 `kubectl run miniwhoami --image=docker.fslab.de/migbin2s/servmgmt-ws22/miniwhoami`
 
-## 2d.iii) Retrieve information about the pod using the kubectl describe pods miniwhoami command. Briefly, describe the information obtained.
+### 2d.iii) Retrieve information about the pod using the kubectl describe pods miniwhoami command. Briefly, describe the information obtained.
 * The information displayed when the command `kubectl describe pods miniwhoami` is used includes the pod name, IP, start time, status e.t.c
 
-## (2d.iv) Delete the pod. What command did you use to do this?
+### (2d.iv) Delete the pod. What command did you use to do this?
 
 `kubectl delete pod miniwhoami`
 
