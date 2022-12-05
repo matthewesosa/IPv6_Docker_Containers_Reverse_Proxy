@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: miniwhoami-manual-pod3
+  labels:
+    hochschule: th-koeln
+    sem: ss19
+spec:
+  containers:
+    - name: miniwhoami-manual-pod3
+      image: docker.fslab.de/migbin2s/servmgmt-ws22/miniwhoami
+      ports:
+        - containerPort: 80
