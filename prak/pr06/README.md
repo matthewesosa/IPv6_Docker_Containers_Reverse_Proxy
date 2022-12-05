@@ -1,8 +1,8 @@
 # Internship Sheet 6 - Loadbalancer Scenario
 ## Task 1
-## Now we want to build a load balancer scenario with an nginx based load balancer and three different miniwhoami services miniwhoami-s1, miniwhoami-s2 and miniwhoami-s3. The load balancer should be reachable from outside via the IP address 2001:638:408:200:ff??:cafe::9999/96 and the URL http://loadbalancer.yourDomain.xy or the URL http://lb.yourDomain.xy, the miniwhoami services should run in the local IPv6 network loc_ipv6.
+### Now we want to build a load balancer scenario with an nginx based load balancer and three different miniwhoami services miniwhoami-s1, miniwhoami-s2 and miniwhoami-s3. The load balancer should be reachable from outside via the IP address 2001:638:408:200:ff??:cafe::9999/96 and the URL http://loadbalancer.yourDomain.xy or the URL http://lb.yourDomain.xy, the miniwhoami services should run in the local IPv6 network loc_ipv6.
 
-## (1b.i) What HTTP load balancing methods are there? How do these work?
+### (1b.i) What HTTP load balancing methods are there? How do these work?
 [Reference source](https://kemptechnologies.com/load-balancer/load-balancing-algorithms-techniques)
 #
 * ### Round Robin : 
@@ -45,10 +45,10 @@ this uses information from Layers 2, 3, 4, and 7 along with input from an SDN c
 here  a server's weight is determined by its response time. The next request is sent to the application server that is responding the quickest. This technique works well in situations where the speed of the application response is crucial.
 #
 
-## (1b.ii) What is session persistence? What types of session persistence are there?
+### (1b.ii) What is session persistence? What types of session persistence are there?
 * Session persistence is a process where requests from a single user are always forwarded by a loadbalancer to the same server on which they first originated. In cookie based session persistence, it is made possible with the help of generated session ID passed along as cookies, and it is known as "sticky sessions" in some load balancing products and services.
 #  
-* ## Types of cookie based session persistence
+* ### Types of cookie based session persistence
 * ### Duration-based session persistence:
 a cookie that specifies a certain duration for session stickiness is sent by your load balancer. The load balancer determines whether this cookie is present each time a client request comes in. The session is no longer sticky after the allotted time has passed and the cookie expires.
 
