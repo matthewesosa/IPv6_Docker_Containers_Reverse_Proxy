@@ -119,11 +119,70 @@ Namespace:        default
 * The container is currently running, but because of an error, it previously terminated with an exit code of 137 (meaning it was terminated with an external  SIGKILL signal)
 
 ## Task 5 - Replication Controller
-## (5b) Delete a pod. What command do you use to do this? What is happening?
+### (5a) Write a pod manifest miniwhoami-rc.yaml for a replication controller spawning 3 miniwhoami pods.
+### (5b) Delete a pod. What command do you use to do this? What is happening?
+`kubectl get po`
+`kubectl delete po miniwhoami-rc-tqvcn`
+```
+NAME                  READY   STATUS        RESTARTS   AGE
+miniwhoami-rc-tqvcn   1/1     Terminating   0          2m15s
+miniwhoami-rc-x8bdr   1/1     Running       0          2m15s
+miniwhoami-rc-xjl9c   1/1     Running       0          14s
+miniwhoami-rc-zw5n9   1/1     Running       0          2m15s
+```
+* The replication controller starts a new pod as the pod `miniwhoami-rc-tqvcn` gets deleted. When the ReplicationController receives a notification of a pod being deleted, the controller is prompted to inspect the actual number of pods and take the necessary steps to return to the desired state of three (3) pods.
 
+### (5c) Output and interpret the description of the replication controller.
+`kubectl describe rc miniwhoami-rc`
+```
+Name:         miniwhoami-rc
+Namespace:    default
+Selector:     app=miniwhoami
+Labels:       app=miniwhoami
+Annotations:  <none>
+Replicas:     3 current / 3 desired  #  ------> "The current number of pods is 3 and the desired number of pod instances is 3."
+Pods Status:  3 Running / 0 Waiting / 0 Succeeded / 0 Failed  # -----> "Pod intance per pod status"
+...
 
+# -----> "The events related to this ReplicationController"
 
+Events:
+  Type    Reason            Age    From                    Message
+  ----    ------            ----   ----                    -------
+  Normal  SuccessfulCreate  4m26s  replication-controller  Created pod: miniwhoami-rc-zw5n9
+  Normal  SuccessfulCreate  4m26s  replication-controller  Created pod: miniwhoami-rc-x8bdr
+  Normal  SuccessfulCreate  4m26s  replication-controller  Created pod: miniwhoami-rc-tqvcn
+  Normal  SuccessfulCreate  2m25s  replication-controller  Created pod: miniwhoami-rc-xjl9c
+  ```
+### (5d) Edit your pod manifest by adding an additional label app2: new to the template . What command can you use to make the change on the fly?
+`kubectl edit rc miniwhoami-rc`
+### (5e) Delete a pod. What is happening? View the labels of the pods. What is the result ?
+```
+NAME                  READY   STATUS        RESTARTS   AGE     LABELS
+miniwhoami-rc-hw69f   1/1     Running       0          6s      app2=new,app=miniwhoami
+miniwhoami-rc-x8bdr   1/1     Terminating   0          11m     app=miniwhoami
+miniwhoami-rc-xjl9c   1/1     Running       0          9m10s   app=miniwhoami
+miniwhoami-rc-zw5n9   1/1     Running       0          11m     app=miniwhoami
+```
 
+* Before I deleted the pod, the additional label `app2: new` to the pod template did not trigger any change from the Replication controller because according to the defined selector  `app=miniwhoami`, the desired state of three (3) pods with labels `app=miniwhoami` had already been fulfilled. 
+
+* But deleting the pod means the ReplicationController sees inadequate number of pods. Hence, ss the deleted pod  `miniwhoami-rc-x8bdr` is terminating the replication controller starts a new pod `miniwhoami-rc-hw69f`  using the edited pod template. Hence, the new pod has both labels `app2=new` and `app=miniwhoami`.
+
+### (5f) Edit your pod manifest by replacing the previous selector `app: miniwhoami` with the selector `app2: new` at the replication controller. Observe and describe what happens during this process.
+```
+NAME                  READY   STATUS    RESTARTS   AGE   LABELS
+miniwhoami-rc-hw69f   1/1     Running   0          10m   app2=new,app=miniwhoami
+miniwhoami-rc-l92j5   1/1     Running   0          25s   app2=new,app=miniwhoami
+miniwhoami-rc-rkbwf   1/1     Running   0          25s   app2=new,app=miniwhoami
+miniwhoami-rc-xjl9c   1/1     Running   0          19m   app=miniwhoami
+miniwhoami-rc-zw5n9   1/1     Running   0          21m   app=miniwhoami
+
+```
+
+* The ReplicationController started two new pods `miniwhoami-rc-l92j5` and `miniwhoami-rc-rkbwf` . This is in response to the new selector `app2: new` ; the controller is ensuring that the new desired state of three (3) pods with the labels `app2=new` and `app=miniwhoami` is fulfilled.
+
+* The two pods `miniwhoami-rc-xjl9c ` and `miniwhoami-rc-zw5n9 ` that were created with the old pod template having only the label `app=miniwhoami` have been moved out of the scope of the ReplicationController.
 
 
 

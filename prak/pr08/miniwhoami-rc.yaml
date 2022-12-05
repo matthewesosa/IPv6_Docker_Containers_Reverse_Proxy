@@ -5,11 +5,13 @@ metadata:
 spec:
   replicas: 3
   selector:
-    app: miniwhoami
+#    app: miniwhoami
+     app2: new
   template:
     metadata:
       labels:
         app: miniwhoami
+        app2: new
     spec:
       containers:
       - name: miniwhoami
