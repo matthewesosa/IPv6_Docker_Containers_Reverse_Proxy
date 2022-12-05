@@ -167,7 +167,7 @@ miniwhoami-rc-zw5n9   1/1     Running       0          11m     app=miniwhoami
 
 * Before I deleted the pod, the additional label `app2: new` to the pod template did not trigger any change from the Replication controller because according to the defined selector  `app=miniwhoami`, the desired state of three (3) pods with labels `app=miniwhoami` had already been fulfilled. 
 
-* But deleting the pod means the ReplicationController sees inadequate number of pods. Hence, ss the deleted pod  `miniwhoami-rc-x8bdr` is terminating the replication controller starts a new pod `miniwhoami-rc-hw69f`  using the edited pod template. Hence, the new pod has both labels `app2=new` and `app=miniwhoami`.
+* But deleting the pod means the ReplicationController sees inadequate number of pods. Hence, as the deleted pod  `miniwhoami-rc-x8bdr` is terminating the replication controller starts a new pod `miniwhoami-rc-hw69f`  using the edited pod template. Hence, the new pod has both labels `app2=new` and `app=miniwhoami`.
 
 ### (5f) Edit your pod manifest by replacing the previous selector `app: miniwhoami` with the selector `app2: new` at the replication controller. Observe and describe what happens during this process.
 ```
@@ -182,10 +182,27 @@ miniwhoami-rc-zw5n9   1/1     Running   0          21m   app=miniwhoami
 
 * The ReplicationController started two new pods `miniwhoami-rc-l92j5` and `miniwhoami-rc-rkbwf` . This is in response to the new selector `app2: new` ; the controller is ensuring that the new desired state of three (3) pods with the labels `app2=new` and `app=miniwhoami` is fulfilled.
 
-* The two pods `miniwhoami-rc-xjl9c ` and `miniwhoami-rc-zw5n9 ` that were created with the old pod template having only the label `app=miniwhoami` have been moved out of the scope of the ReplicationController.
+* The two pods `miniwhoami-rc-xjl9c ` and `miniwhoami-rc-zw5n9 ` that were initially created with the old pod template having only the label `app=miniwhoami` have been moved out of the scope of the ReplicationController.
 
+## Task 6 - Replication Set
+### (6a) Clean up your system completely again. Next, use the replication controller pod manifest `miniwhoami-rc.yaml` from Task 5 above to start three miniwhoami pods.
+### (6b) Delete the replication controller you just created without also deleting the pods it manages. Which command do you use for this? Check the situation that has arisen, i.e check if the replication controller is deleted and the pods are still running.
+`kubectl delete rc miniwhoami-rc --cascade=orphan`
+* The pods were still running even after deleting the ReplicationController.
+### (6c) Write a pod manifest `miniwhoami-rs.yaml` for a ReplicaSet that spawns five(!) miniwhoami pods with the label app: miniwhoami  
+### (6d) Check the current running pods, then use miniwhoami-rs.yaml to create the replication set and check the running pods.
+### (6e) Interpret your observations.
+```
+miniwhoami-rc-4m9qw   1/1     Running   0          27m     app=miniwhoami
+miniwhoami-rc-mrgxn   1/1     Running   0          27m     app=miniwhoami
+miniwhoami-rc-skvbl   1/1     Running   0          27m     app=miniwhoami
+miniwhoami-rs-q8926   1/1     Running   0          2m34s   app=miniwhoami
+miniwhoami-rs-t82sq   1/1     Running   0          2m34s   app=miniwhoami
+```
+* Though the desired state is five(5) pods, only the two pods `miniwhoami-rs-q8926` and `miniwhoami-rs-t82sq` were created by the ReplicaSet. The previously running three(3) pods were added to the scope of the ReplicaSet because they meets the Label - Selector requirement defined in the ReplicaSet. 
 
-
+### (6f) As an experimental conclusion, start the old replication controller miniwhoami-rc.yaml from the previous task, 3 miniwhoami Pods again. What is happening? How do you interpret your observations?
+* The ReplicationController created three(3) new pods even when pods with the same label `àpp:miniwhoami` in the scope of the ReplicaSet were already running.
 
 
 
