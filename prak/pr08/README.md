@@ -14,7 +14,7 @@
 ### (1c.iii) What is the difference compared to the command kubectl describe ... .
 The command to outputs the pod's yaml descriptor gives a more detailed information includeding the content of the yaml file used for creating the pod. Whlie the 'kubectl describe' command only gives out important information about the pod.
 ### (1d) Can you access your pod with curl localhost:8080 (or other port)? If no, why not?
-No. I cannot access it because the pod is not running in my local machnine, it is running within the minikube virtual machine that was created in my local machine when I installed minikube.
+No. I cannot access it because the pod is not running in my local machnine, it is running within the minikube cluster. To access the pod from my local machine, I need to do port forwarding; using kubectl to set up a proxy that will forward all traffic from a given port in my local machine to a port associated with the pod running in the minikube cluster.
 ### (1e) Provide a method to access your pod and try it. Which commands did you use for this?
 I can either use a simple NodePort service to 'minikube ip' or port forwarding to my local machine.
 
