@@ -8,7 +8,7 @@
 
 #
 
-#### All services deployed and running in my Virtual Server "serv-ws22" can be accessed via the public ipv6 link [Running Services](http://[2001:638:408:200:ff00:cafe:0:beaf]:8080/)  
+#### All services deployed and running in my Virtual Server "serv-ws22" can be accessed ('http') via the public ipv6 link [Running Services](http://[2001:638:408:200:ff00:cafe:0:beaf]:8080/)  
 
 #
 
