@@ -64,6 +64,7 @@ kubernetes-dashboard   Active   5d6h
 migbin2s               Active   67s
 ```
 ### (3c) How do you find out your current namespace?
+If you do not specify any namespace, your command would be executed in the default namespace. But you can find out your current namespace with the command.
 `kubectl config get-contexts`
 ```
 CURRENT   NAME       CLUSTER    AUTHINFO   NAMESPACE
