@@ -1,0 +1,11 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: webapp
+spec:
+  template:
+    spec:
+      containers:
+      - image: docker.fslab.de/migbin2s/servmgmt-ws22/miniwhoami
+        ports:
+        - containerPort: 80
