@@ -75,6 +75,7 @@ webapp   http://webapp.default.10.107.226.239.sslip.io   webapp-00001    webapp-
 Two cases where cold start can occur :
 * If you have not used a pod for a long time in a Kubernetes node.
 * When you are created a new pod from a new image.
+* 
 In both cases, it would therefore be necessary to download the images from a remote image repository. And the container need to be restarted from scratch. Such cold-start-delay in serverless computing usually takes between 10seconds to 15seconds (and sometimes up to a minute or more).
 ### Create a service in knative that uses the standard knative pod autoscaler and for which the occurrence of cold-start-delays is impossible.
 
