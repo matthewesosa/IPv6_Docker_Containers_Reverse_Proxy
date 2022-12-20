@@ -9,3 +9,5 @@
 * Keccak-256, a cryptographic function, is part of Solidity (SHA-3 Family) while SHA-256 is the implementation of the SHA-2 standard with a 256 bits key.
 * Ethereum uses Keccak-256 in a consensus engine called Ethash.
 * The Bitcoin blockchain makes extensive use of SHA-256, including when identifying transaction hashes and when miners are performing proof-of-work mining.
+### (1c) What is an Ethereum Black Hole Address?
+The Ethereum address 0x000000000000000000000000000000000000. It is the Ethereum community's equivalent of a black hole, that receives all tokens supplied to it without remorse and never returning any of them. It is the Ethereum network's genesis address, and roughly $520 million worth of ether and ERC20 tokens have been sent there by error or intentionally.
