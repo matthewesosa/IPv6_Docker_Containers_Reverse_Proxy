@@ -18,5 +18,18 @@ Reference: [ethereum.stackexchange.com](https://ethereum.stackexchange.com/quest
 * An Ethereum black hole address is a special address on the Ethereum blockchain that is associated with a contract that has no code and therefore cannot execute any actions. Transactions sent to a black hole address are effectively lost, as they cannot be retrieved or used in any way.
 * The concept of a black hole address was introduced as part of the Ethereum network's upgrade to Ethereum 2.0, which included a feature called "account abstraction." Account abstraction allows for the creation of smart contracts that are associated with addresses, but do not contain any code. This can be useful in certain situations, such as when creating a contract that serves as a placeholder for a future contract that has not yet been developed.
 ### (1d) What is the clever idea behind the Ethereum Improvement Proposal 55 ([EIP-55: Mixed-case checksum address encoding](https://eips.ethereum.org/EIPS/eip-55) )?
+* The main idea behind EIP 55 is to reduce the likelihood of users sending transactions to the wrong Ethereum address due to human error.
+
+* EIP 55 introduces a checksum mechanism for Ethereum addresses.
+
+* The EIP 55 algorithm transforms the original address in a number of ways to produce a checksummed address. This entails changing the address to all uppercase letters and adding a checksum as suffix.
+
+* The address checksum approach ensures that a given address is legitimate and belongs to the intended recipient. It functions by adding an additional level of address validation, making sure that the  address is entered or copied accurately. The checksum is created by appending the first four bytes of the address's Keccak-256 hash to the end of the address in hexadecimal format.
+
+### (1e) With the ETH vanity address generator](https://vanity-eth.tk/) you can generate Ethereum vanity addresses - i.e. easily identifiable addresses. Behind each address there is an Ethereum account consisting of (secret key, public key, Ethereum address).
+### * Create an Ethereum vanity address for yourself ETH-matr , the last 5 characters of which are the last 5 digits of your (confidential) matriculation number.
+* Comment : My address ETH-pub is: 
+0xf7C15b05235f6F814a2F520c0102923B73777777
+
 
 
