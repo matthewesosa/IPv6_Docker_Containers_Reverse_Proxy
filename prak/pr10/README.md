@@ -5,7 +5,7 @@
 * A random private key is created (64 (hex) characters / 32 bytes)
 * The public key is derived from the private key  using the Elliptic Curve     Digital Signature Algorithm.
 * The address is then formed from the public key by taking the last 20 bytes of the Keccak-256 hash of the public key and adding 0x as a prefix.
-Reference:()
+Reference: [ethereum.stackexchange.com](https://ethereum.stackexchange.com/questions/3542/how-are-ethereum-addresses-generated)
 ### (1b) What is the relationship between the hash algorithms SHA256 and Keccak?
 * SHA-256 and Keccak are both cryptographic hash functions designed to be secure, fast, and efficient.
 * Keccak-256, a cryptographic function, is part of Solidity (SHA-3 Family) while SHA-256 is the implementation of the SHA-2 standard with a 256 bits key.
