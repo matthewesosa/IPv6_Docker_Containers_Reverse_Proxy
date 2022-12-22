@@ -26,10 +26,10 @@ Reference: [ethereum.stackexchange.com](https://ethereum.stackexchange.com/quest
 
 * The address checksum approach ensures that a given address is legitimate and belongs to the intended recipient. It functions by adding an additional level of address validation, making sure that the  address is entered or copied accurately. The checksum is created by appending the first four bytes of the address's Keccak-256 hash to the end of the address in hexadecimal format.
 
-### (1e) With the ETH vanity address generator](https://vanity-eth.tk/) you can generate Ethereum vanity addresses - i.e. easily identifiable addresses. Behind each address there is an Ethereum account consisting of (secret key, public key, Ethereum address).
-### * Create an Ethereum vanity address for yourself ETH-matr , the last 5 characters of which are the last 5 digits of your (confidential) matriculation number.
-* Comment : My address ETH-pub is: 
-0xf7C15b05235f6F814a2F520c0102923B73777777
+### (1e) With the [ETH vanity address generator](https://vanity-eth.tk/) you can generate Ethereum vanity addresses - i.e. easily identifiable addresses. Behind each address there is an Ethereum account consisting of (secret key, public key, Ethereum address).
+### Create an Ethereum vanity address for yourself ETH-matr , the last 5 characters of which are the last 5 digits of your (confidential) matriculation number.
+* Comment : My address ETH-pub is:  `0xf7C15b05235f6F814a2F520c0102923B73777777`
+* Comment : My address ETH-matr is: `0xC63b13eb2F087fC06EDd7e3c0610586BF4044732`
 
 
 
