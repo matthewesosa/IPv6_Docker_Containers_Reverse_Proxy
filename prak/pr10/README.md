@@ -28,6 +28,7 @@ Reference: [ethereum.stackexchange.com](https://ethereum.stackexchange.com/quest
 
 ### (1e) With the [ETH vanity address generator](https://vanity-eth.tk/) you can generate Ethereum vanity addresses - i.e. easily identifiable addresses. Behind each address there is an Ethereum account consisting of (secret key, public key, Ethereum address).
 ### Create an Ethereum vanity address for yourself ETH-matr , the last 5 characters of which are the last 5 digits of your (confidential) matriculation number.
+### Create a second Ethereum vanity address for yourself ETH-pub, the last characters of which you like (and everyone is allowed to know).
 * Comment : My address ETH-pub is:  `0xf7C15b05235f6F814a2F520c0102923B73777777`
 * Comment : My address ETH-matr is: `0xC63b13eb2F087fC06EDd7e3c0610586BF4044732`
 
