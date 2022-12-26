@@ -34,9 +34,9 @@ Reference: [ethereum.stackexchange.com](https://ethereum.stackexchange.com/quest
 
 ## Task 2 - Ethereum Wallet
 ### (2b) With the installation of your wallet you will receive a default account. What is this? Should this be kept secret? What are the risks of disclosing your Ethereum account?
-* A default account is typically provided when you install an Ethereum wallet. Your account on the Ethereum network has a wallet address and an associated private key which should be kept as a secret.
-* Your wallet address can be shared safely with anyone from whom you want to receive fund. 
-* Though it is technically safe to share your wallet address with others, but it may leave you as a target.
+* A default account is typically provided when an Ethereum wallet is installed. An account on the Ethereum network has a wallet address and an associated private key which should be kept as a secret.
+* My wallet address can be shared safely with anyone from whom I want to receive fund. 
+* Though it is technically safe to share my wallet address with others, it may leave me as a target.
 
 ### (2d.i) With your wallet you can create new accounts and import accounts. What is the logical difference between the two operations?
 * In creating a new account, it is necessary to generate a new wallet address and the associated private key
