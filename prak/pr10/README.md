@@ -32,5 +32,28 @@ Reference: [ethereum.stackexchange.com](https://ethereum.stackexchange.com/quest
 * Comment : My address ETH-pub is:  `0xf7C15b05235f6F814a2F520c0102923B73777777`
 * Comment : My address ETH-matr is: `0xC63b13eb2F087fC06EDd7e3c0610586BF4044732`
 
+## Task 2 - Ethereum Wallet
+### (2b) With the installation of your wallet you will receive a default account. What is this? Should this be kept secret? What are the risks of disclosing your Ethereum account?
+* A default account is typically provided when you install an Ethereum wallet. Your account on the Ethereum network has a wallet address and an associated private key which should be kept as a secret.
+* Your wallet address can be shared safely with anyone from whom you want to receive fund. 
+* Though it is technically safe to share your wallet address with others, but it may leave you as a target.
+
+### (2d.i) With your wallet you can create new accounts and import accounts. What is the logical difference between the two operations?
+* In creating a new account, it is necessary to generate a new wallet address and the associated private key
+* But importing account means using already existing wallet address and the associated private key to access the already existing account
+### (2d.ii) What exactly happens when creating and importing an account?
+---- When creating an Ethereum account, the following process occurs:
+* A new wallet address is generated.
+* A new private key is generated.
+* The private key is encrypted using your specified password.
+* The encrypted private key is stored locally on your device.
+* The wallet address and encrypted private key are used to create the new Ethereum account.
+  
+---- When importing an Ethereum account, the following process occurs:
+* You enter the wallet address and private key for the existing account into your Ethereum wallet software.
+* Encryption of the private key using your specified.
+* The encrypted private key is stored locally on your device.
+* The encrypted private key and the wallet address are used to access the existing Ethereum account.
+
 
 
