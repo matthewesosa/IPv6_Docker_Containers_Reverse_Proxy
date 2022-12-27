@@ -60,8 +60,7 @@ I used Metamask as my Ethereum wallet.
   
 ---- When importing an Ethereum account, the following process occurs:
 * In the case of 'Metamask', you enter the private key for the existing account into your Ethereum wallet  software.
-* Encryption of the private key using your specified password.
-* The encrypted private key is stored locally on your device.
+* the private key is encrypted using your specified password.
 * The encrypted private key and the wallet address are used to access the existing Ethereum account.
   
 ## Task 3 - Ethereum Faucet`
