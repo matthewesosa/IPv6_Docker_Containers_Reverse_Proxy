@@ -65,19 +65,23 @@ I used Metamask as my Ethereum wallet.
 * The encrypted private key and the wallet address are used to access the existing Ethereum account.
   
 ## Task 3 - Ethereum Faucet`
-You can transfer Netlab dollars (N$) to any Ethereum account via the Netlab Faucet [( http://faucet.docklab.de:8080/ )](http://faucet.docklab.de:8080/).
+### You can transfer Netlab dollars (N$) to any Ethereum account via the Netlab Faucet [( http://faucet.docklab.de:8080/ )](http://faucet.docklab.de:8080/).
 ### (3a) Cash out some N$ to your wallet default account.
 ### (3b) Identify this transaction in the Ethereum Lite Explorer:  [http://explorer.docklab.de:25000/](http://explorer.docklab.de:25000/) or in Blockscout:  [http://blockscout.docklab.de:4000/](http://blockscout.docklab.de:4000/) and write down the transaction number.
 * block: #42152
 * Transaction hash: `0x35e928a8924f72c827d30a16986f7a33e5d312d61e40313b4e7c4ce87653ecca`
-![](images/transaction_ETH-pub.png)
+![](images/Transaction_To-Default-Account.png)
 
 ### (3c) What is the Ethereum address of the Netlab faucet?
 `0xB25F98E8190DaaA442Cd865f3Bfc8187C9CEaffe`
 
 
 ## Task 4 - Ethereum Transaction
-### (4A) Transfer a small N$ amount from your wallet default account to your ETH-pub account or to a fellow student's ETH-pub account.
+### (4a) Transfer a small N$ amount from your wallet default account to your ETH-pub account or to a fellow student's ETH-pub account.
+### (4b) Identify this transaction in the Ethereum Lite Explorer:  [http://explorer.docklab.de:25000/](http://explorer.docklab.de:25000/) or in Blockscout:  [http://blockscout.docklab.de:4000/](http://blockscout.docklab.de:4000/) (unfortunately no longer stable) and note down the transaction number.
+* block: #42302
+* Transaction hash: `0x7facfb23497db05feabca8189b7e7edd115b569ccc53b021a6c6456ce800e4be`
+![](images/Transaction_Default-to-ETH-pub.png)
 
 
 
