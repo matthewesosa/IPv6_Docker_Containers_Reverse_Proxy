@@ -33,9 +33,11 @@ Reference: [ethereum.stackexchange.com](https://ethereum.stackexchange.com/quest
 * Comment : My address ETH-matr is: `0xC63b13eb2F087fC06EDd7e3c0610586BF4044732`
 
 ## Task 2 - Ethereum Wallet
+### (2a) Decide on an Ethereum wallet and install it on your computer or on your mobile phone. Write down your account seed phrase and keep it safe.
+I used Metamask as my Ethereum wallet.
 ### (2b) With the installation of your wallet you will receive a default account. What is this? Should this be kept secret? What are the risks of disclosing your Ethereum account?
 * A default account is typically provided when an Ethereum wallet is installed. An account on the Ethereum network has a wallet address and an associated private key which should be kept as a secret.
-* My wallet address can be shared safely with anyone from whom I want to receive fund. 
+* My wallet address for a given account can be shared safely with anyone from whom I want to receive fund. 
 * Though it is technically safe to share my wallet address with others, it may leave me as a target.
 
 ### (2d.i) With your wallet you can create new accounts and import accounts. What is the logical difference between the two operations?
