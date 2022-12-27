@@ -83,5 +83,9 @@ I used Metamask as my Ethereum wallet.
 * Transaction hash: `0x7facfb23497db05feabca8189b7e7edd115b569ccc53b021a6c6456ce800e4be`
 ![](images/Transaction_Default-to-ETH-pub.png)
 
+### (4c) Using the Ethereum Lite Explorer, analyze the transaction `29398`. What "forensic" results can you derive from your analysis? How do you rate the anonymity of a bitcoin payment against the background of the money laundering problem?
+### (4d) Important note, important task: 
+### On Thursday, 2 February, the exam "Service Management in Networks" will take place from 13:00 to 14:30. Please transfer the exam fee of N$ 0.777 from your ETH-matr account to the Netlab Ethereum Blockchain account 0x1f9883a5FD4e9cCa3f49BB6023E6bE0f8a6d3333 by 23:55 on Wednesday, 21.12.22 at the latest.
+![](images/Transfer_From-ETH-matr.png)
 
 
