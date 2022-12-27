@@ -36,9 +36,16 @@ Reference: [ethereum.stackexchange.com](https://ethereum.stackexchange.com/quest
 ### (2a) Decide on an Ethereum wallet and install it on your computer or on your mobile phone. Write down your account seed phrase and keep it safe.
 I used Metamask as my Ethereum wallet.
 ### (2b) With the installation of your wallet you will receive a default account. What is this? Should this be kept secret? What are the risks of disclosing your Ethereum account?
+* My wallet address for the default account is: `0xD28B572ccEf0f91Ff451ac961364467E540e044E`
 * A default account is typically provided when an Ethereum wallet is installed. An account on the Ethereum network has a wallet address and an associated private key which should be kept as a secret.
 * My wallet address for a given account can be shared safely with anyone from whom I want to receive fund. 
 * Though it is technically safe to share my wallet address with others, it may leave me as a target.
+### (2c) Connect to the Netlab Ethereum blockchain, which is only reachable over IPv6 for security reasons.The connection details for the Netlab Ethereum blockchain are:
+| Network name:     | Netlab Ethereum Blockchain            | 	
+|:-----------------:|:-------------------------------------:|
+|RPC URL:           |http://blockchain-ipv6.docklab.de:8545 |
+|ChainID:           |1111                                   | 
+|Currency symbols   |N$                                     |
 
 ### (2d.i) With your wallet you can create new accounts and import accounts. What is the logical difference between the two operations?
 * In creating a new account, it is necessary to generate a new wallet address and the associated private key
@@ -52,10 +59,25 @@ I used Metamask as my Ethereum wallet.
 * The wallet address and encrypted private key are used to create the new Ethereum account.
   
 ---- When importing an Ethereum account, the following process occurs:
-* You enter the wallet address and private key for the existing account into your Ethereum wallet software.
-* Encryption of the private key using your specified.
+* In the case of 'Metamask', you enter the private key for the existing account into your Ethereum wallet  software.
+* Encryption of the private key using your specified password.
 * The encrypted private key is stored locally on your device.
 * The encrypted private key and the wallet address are used to access the existing Ethereum account.
+  
+## Task 3 - Ethereum Faucet`
+You can transfer Netlab dollars (N$) to any Ethereum account via the Netlab Faucet [( http://faucet.docklab.de:8080/ )](http://faucet.docklab.de:8080/).
+### (3a) Cash out some N$ to your wallet default account.
+### (3b) Identify this transaction in the Ethereum Lite Explorer:  [http://explorer.docklab.de:25000/](http://explorer.docklab.de:25000/) or in Blockscout:  [http://blockscout.docklab.de:4000/](http://blockscout.docklab.de:4000/) and write down the transaction number.
+* block: #42152
+* Transaction hash: `0x35e928a8924f72c827d30a16986f7a33e5d312d61e40313b4e7c4ce87653ecca`
+![](images/transaction_ETH-pub.png)
+
+### (3c) What is the Ethereum address of the Netlab faucet?
+`0xB25F98E8190DaaA442Cd865f3Bfc8187C9CEaffe`
+
+
+## Task 4 - Ethereum Transaction
+### (4A) Transfer a small N$ amount from your wallet default account to your ETH-pub account or to a fellow student's ETH-pub account.
 
 
 
