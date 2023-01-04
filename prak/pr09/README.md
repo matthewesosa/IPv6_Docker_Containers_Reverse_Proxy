@@ -78,5 +78,5 @@ webapp   http://webapp.default.10.107.226.239.sslip.io   webapp-00001    webapp-
 * First-time function invocations: A function will often incur a cold-start delay when it is called for the first time since its container needs to be spun up and initialized.
 * A function may have a cold-start delay when it is subsequently invoked if it has not been used recently. This is due to the possibility that the function's container was turned off in order to save resources.
 * If you have not used a pod for a long time in a Kubernetes node or when you are creating a new pod from a new image. In both cases, it would therefore be necessary to pull the images from a remote image repository. And the container need to be restarted from scratch. Such cold-start-delay in serverless computing usually takes between 10seconds to 15seconds (and sometimes up to a minute or more).
-### Create a service in knative that uses the standard knative pod autoscaler and for which the occurrence of cold-start-delays is impossible.
+### (3b) Create a service in knative that uses the standard knative pod autoscaler and for which the occurrence of cold-start-delays is impossible.
 
