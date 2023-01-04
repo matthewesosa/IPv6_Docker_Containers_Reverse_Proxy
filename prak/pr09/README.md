@@ -1,9 +1,12 @@
 # Internship Sheet 9 - Serverless Computing
 ## Task 1 - Definition of serverless computing
 ### (1a) How can serverless computing be defined
+* Serverless computing is a method to execute code in a cloud environment without caring about the underlying infrastructure. You deploy your application while  the cloud provider takes care of the execution in response to  particular 'triggers' or 'events'. This eliminates the inconvenience of managing servers.
 
 ### (1b) and how can it be distinguished from a kubernetes based PaaS offering?
- Unlike other Kubernetes based PaaS, Serverless computing approach like Knative solves an important technical problem of  being able to scale resources down to zero, rather than requiring at least a minimal number to sit idle, waiting for workloads.
+* One key difference between serverless computing and a Kubernetes-based PaaS is that serverless computing is typically more abstracted from the underlying infrastructure and is designed to be triggered by specific events or actions, while a Kubernetes-based PaaS provides a more general-purpose platform for running applications in containers.
+ 
+* Unlike other Kubernetes based PaaS, Serverless computing approach like Knative solves an important technical problem of  being able to scale resources down to zero, rather than requiring at least a minimal number to sit idle, waiting for workloads.
  
 
 ## Task 2 - Install knative on your kubernetes cluster
