@@ -1,0 +1,15 @@
+apiVersion: serving.knative.dev/v1 
+kind: Service 
+metadata:
+  name: serving-http-status
+spec:
+  template:
+    metadata:
+      name: serving-http-status-v1
+    spec:
+      containers:
+      - image: ealen/echo-server
+        env:
+          - name: "COMMANDS__HTTPCODE__HEADER"
+            value: "200"
+
