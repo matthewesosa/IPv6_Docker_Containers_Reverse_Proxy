@@ -67,6 +67,8 @@ spec:
 ```
 `kubectl apply -f webapp-kservice.yml`
 
+`kubectl get ksvc webapp`
+
 ```
 NAME     URL                                             LATESTCREATED   LATESTREADY    READY   REASON
 webapp   http://webapp.default.10.107.226.239.sslip.io   webapp-00001    webapp-00001   True
@@ -79,4 +81,83 @@ webapp   http://webapp.default.10.107.226.239.sslip.io   webapp-00001    webapp-
 * A function may have a cold-start delay when it is subsequently invoked if it has not been used recently. This is due to the possibility that the function's container was turned off in order to save resources.
 * If you have not used a pod for a long time in a Kubernetes node or when you are creating a new pod from a new image. In both cases, it would therefore be necessary to pull the images from a remote image repository. And the container need to be restarted from scratch. Such cold-start-delay in serverless computing usually takes between 10seconds to 15seconds (and sometimes up to a minute or more).
 ### (3b) Create a service in knative that uses the standard knative pod autoscaler and for which the occurrence of cold-start-delays is impossible.
+
+
+## Task 4 - Revisions and Traffic Splitting
+### (4a) Create a knative service responding with http status code 200 to all http GET requests.
+`kubectl apply -f 4a-serving-http-status.yml`
+### (4b) Create a new revision of this knative service, which responds with http status code 201 to all http GET requests.
+`kubectl apply -f 4b-revision-http-status.yml`
+`kubectl get revisions`
+
+```
+NAME                     CONFIG NAME           K8S SERVICE NAME   GENERATION   READY   REASON   ACTUAL REPLICAS   DESIRED REPLICAS
+serving-http-status-v1   serving-http-status                      1            True             1                 1
+serving-http-status-v2   serving-http-status                      2            True             1                 1
+
+
+```
+### (4c) Let knative split the incoming traffic 40% to the first revision and 60% to the second revision.
+`kubectl apply -f 4c-traffic-splitting.yml`
+
+### (4d) Test the traffic splitting functionality by using a load generator. (For example, use the tool "hey")
+`kubectl get ksvc serving-http-status`
+
+```
+NAME                  URL                                                          LATESTCREATED            LATESTREADY              READY   REASON
+serving-http-status   http://serving-http-status.default.10.107.226.239.sslip.io   serving-http-status-v2   serving-http-status-v2   True    
+
+```
+
+`hey -n 100 "http://serving-http-status.default.10.107.226.239.sslip.io"`
+
+```
+Summary:
+  Total:	9.6216 secs
+  Slowest:	9.6142 secs
+  Fastest:	0.0021 secs
+  Average:	3.1757 secs
+  Requests/sec:	10.3933
+  
+  Total data:	1790 bytes
+  Size/request:	17 bytes
+
+Response time histogram:
+  0.002 [1]	|■
+  0.963 [41]	|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+  1.925 [2]	|■■
+  2.886 [1]	|■
+  3.847 [3]	|■■■
+  4.808 [24]	|■■■■■■■■■■■■■■■■■■■■■■■
+  5.769 [6]	|■■■■■■
+  6.731 [5]	|■■■■■
+  7.692 [8]	|■■■■■■■■
+  8.653 [6]	|■■■■■■
+  9.614 [3]	|■■■
+
+
+Latency distribution:
+  10% in 0.0056 secs
+  25% in 0.0142 secs
+  50% in 4.0040 secs
+  75% in 5.3387 secs
+  90% in 7.5979 secs
+  95% in 8.6092 secs
+  99% in 9.6142 secs
+
+Details (average, fastest, slowest):
+  DNS+dialup:	0.0210 secs, 0.0021 secs, 9.6142 secs
+  DNS-lookup:	0.0199 secs, 0.0000 secs, 0.0466 secs
+  req write:	0.0001 secs, 0.0000 secs, 0.0009 secs
+  resp wait:	3.1545 secs, 0.0021 secs, 9.5711 secs
+  resp read:	0.0001 secs, 0.0000 secs, 0.0003 secs
+
+Status code distribution:
+  [200]	42 responses
+  [201]	58 responses
+  
+```
+
+
+
 
