@@ -8,7 +8,6 @@ spec:
       name: serving-http-status-v2
     spec:
       containers:
-      - image: ealen/echo-server
-        env:
-          - name: "COMMANDS__HTTPCODE__HEADER"
-            value: "201"
+      - image: aphesis/http-status-code:201
+        ports:
+        - containerPort: 80
