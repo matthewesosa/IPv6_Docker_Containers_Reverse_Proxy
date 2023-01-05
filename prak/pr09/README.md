@@ -88,6 +88,7 @@ webapp   http://webapp.default.10.107.226.239.sslip.io   webapp-00001    webapp-
 `kubectl apply -f 4a-serving-http-status.yml`
 ### (4b) Create a new revision of this knative service, which responds with http status code 201 to all http GET requests.
 `kubectl apply -f 4b-revision-http-status.yml`
+
 `kubectl get revisions`
 
 ```
@@ -155,7 +156,7 @@ Details (average, fastest, slowest):
 Status code distribution:
   [200]	42 responses
   [201]	58 responses
-  
+
 ```
 
 
