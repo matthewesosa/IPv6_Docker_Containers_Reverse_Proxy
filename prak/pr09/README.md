@@ -6,7 +6,7 @@
 ### (1b) and how can it be distinguished from a kubernetes based PaaS offering?
 * One key difference between serverless computing and a Kubernetes-based PaaS is that serverless computing is typically more abstracted from the underlying infrastructure and is designed to be triggered by specific events or actions, while a Kubernetes-based PaaS provides a more general-purpose platform for running applications in containers.
  
-* Unlike other Kubernetes based PaaS, Serverless computing approach like Knative solves an important technical problem of  being able to scale resources down to zero, rather than requiring at least a minimal number to sit idle, waiting for workloads.
+* In summary, while both models allow developers to focus on writing and deploying their code rather than managing infrastructure, serverless computing is best suited for stateless, event-driven workloads, and a Kubernetes-based PaaS offering is best suited for stateful, long-running workloads.
  
 
 ## Task 2 - Install knative on your kubernetes cluster
