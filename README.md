@@ -11,7 +11,7 @@
 * /prak/pr01 ----> Internship Sheet 1 - Home Laboratory
 * /prak/pr02 ----> Internship Sheet 2 - Docker + Miniwhoami (local desktop)
 * /prak/pr03 ----> Internship Sheet 3 - Ansible
-* /prak/pr04 ----> Internship Sheet 4 - Docker + IPv6 (Remote deployment)
+* /prak/pr04 ----> Internship Sheet 4 - Docker + IPv6 + NDP Proxy (Remote deployment)
 * /prak/pr05 ----> Internship Sheet 5 - Reverse Proxy with Nginx and Docker
 * /prak/pr06 ----> Internship Sheet 6 - Loadbalancer Scenario (Nginx and Docker)
 * /prak/pr07 ----> Internship Sheet 7 - Minikube
