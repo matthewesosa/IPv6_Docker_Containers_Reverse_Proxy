@@ -1,6 +1,6 @@
 # README
 
-#### This repository contains a series of Devops projects that I carried out under the supervision of [Prof. Dr. Martin Leischner](https://www.leischner.inf.h-brs.de/) at the Department of Computer Science - Bonn-Rhein-Sieg University of Applied Sciences.
+#### This repository contains a series of Devops projects that I carried out under the supervision of [Prof. Dr. Martin Leischner](https://www.linkedin.com/in/martin-leischner-205840151) at the Department of Computer Science - Bonn-Rhein-Sieg University of Applied Sciences.
 
 #
 
